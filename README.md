@@ -44,8 +44,8 @@ That Docker image is intended to run any collection of Dash applications.
 $ docker pull artificialintelligence/python-alpine
 ```
 
-* Launch Jupyter Lab within the Docker image (where `<port>` corresponds
-  to the local port on which Jupyter Lab is launched; the default is 8888):
+* Launch Dash or Flask within the Docker image (where `<port>` corresponds
+  to the local port on which Dash or Flask is launched; the default is 8050):
 ```bash
 $ docker run -d -p <port>:8050 artificialintelligence/python-alpine
 ```
