@@ -30,7 +30,7 @@ RUN apk add --no-cache --virtual .build-deps gcc g++ libstdc++ gfortran \
  && pip install pandas-datareader \
  && pip install seaborn \
  && pip install matplotlib \
- && pip install scikit-learn
+ && pip install scikit-learn \
  && apk del .build-deps
 
 #
