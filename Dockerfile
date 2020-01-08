@@ -18,8 +18,19 @@ ENV HOME /root
 
 # Install the Python dependencies for Dash
 WORKDIR $HOME/dev/dash-starter
-RUN apk add --no-cache --virtual .build-deps gcc g++ libstdc++ musl-dev libxml2-dev libxslt-dev linux-headers \
- && pip install -U psutil numpy pandas pandas-datareader seaborn matplotlib scikit-learn dill joblib \
+RUN apk add --no-cache --virtual .build-deps gcc g++ libstdc++ gfortran \
+            musl-dev libxml2-dev libxslt-dev linux-headers \
+            openblas-dev \
+ && pip install psutil \
+ && pip install dill \
+ && pip install joblib \
+ && pip install numpy \
+ && pip install scipy \
+ && pip install pandas \
+ && pip install pandas-datareader \
+ && pip install seaborn \
+ && pip install matplotlib \
+ && pip install scikit-learn
  && apk del .build-deps
 
 #
