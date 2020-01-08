@@ -20,7 +20,7 @@ ENV HOME /root
 WORKDIR $HOME/dev/dash-starter
 RUN apk add --no-cache --virtual .build-deps gcc g++ libstdc++ gfortran \
             musl-dev libxml2-dev libxslt-dev linux-headers \
-            openblas-dev \
+            openblas-dev lapack-dev \
  && pip install psutil \
  && pip install dill \
  && pip install joblib \
