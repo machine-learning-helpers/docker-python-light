@@ -20,12 +20,11 @@ ENV HOME /root
 WORKDIR $HOME/dev/dash-starter
 RUN apk add --no-cache --virtual .build-deps gcc g++ libstdc++ gfortran \
             musl-dev libxml2-dev libxslt-dev linux-headers \
-            openblas-dev lapack-dev \
+            openblas-dev lapack-dev py3-scipy \
  && pip install psutil \
  && pip install dill \
  && pip install joblib \
  && pip install numpy \
- && pip install scipy \
  && pip install pandas \
  && pip install pandas-datareader \
  && pip install seaborn \
