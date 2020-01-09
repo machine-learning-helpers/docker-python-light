@@ -18,9 +18,9 @@ ENV HOME /root
 
 # Install the Python dependencies
 WORKDIR $HOME/dev/dash-starter
-RUN apk add --no-cache pkgconfig curl wget openblas lapack libstdc++
+RUN apk add --no-cache pkgconfig curl wget openblas lapack libstdc++ freetype
 RUN apk add --no-cache --virtual .build-deps gcc g++ gfortran \
-            musl-dev libxml2-dev libxslt-dev linux-headers \
+            musl-dev libxml2-dev libxslt-dev freetype-dev linux-headers \
             openblas-dev lapack-dev py3-scipy
 RUN pip install psutil \
  && pip install dill \
