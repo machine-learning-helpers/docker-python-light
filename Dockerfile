@@ -18,20 +18,20 @@ ENV HOME /root
 
 # Install the Python dependencies
 WORKDIR $HOME/dev/dash-starter
-RUN apk add --no-cache openblas lapack libstdc++ \
- && apk add --no-cache --virtual .build-deps gcc g++ gfortran \
+RUN apk add --no-cache pkgconfig curl wget openblas lapack libstdc++
+RUN apk add --no-cache --virtual .build-deps gcc g++ gfortran \
             musl-dev libxml2-dev libxslt-dev linux-headers \
-            openblas-dev lapack-dev py3-scipy \
- && pip install psutil \
+            openblas-dev lapack-dev py3-scipy
+RUN pip install psutil \
  && pip install dill \
  && pip install joblib \
  && pip install numpy \
  && pip install pandas \
  && pip install pandas-datareader \
- && pip install seaborn \
- && pip install matplotlib \
- && pip install scikit-learn \
- && apk del .build-deps
+ && pip install seaborn
+RUN pip install matplotlib
+RUN pip install scikit-learn
+RUN apk del .build-deps
 
 #
 #ENTRYPOINT ["sh"]
