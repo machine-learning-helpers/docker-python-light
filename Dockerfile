@@ -16,9 +16,10 @@ EXPOSE 8050
 #
 ENV HOME /root
 
-# Install the Python dependencies for Dash
+# Install the Python dependencies
 WORKDIR $HOME/dev/dash-starter
-RUN apk add --no-cache --virtual .build-deps gcc g++ libstdc++ gfortran \
+RUN apk add --no-cache openblas lapack libstdc++ \
+ && apk add --no-cache --virtual .build-deps gcc g++ gfortran \
             musl-dev libxml2-dev libxslt-dev linux-headers \
             openblas-dev lapack-dev py3-scipy \
  && pip install psutil \
