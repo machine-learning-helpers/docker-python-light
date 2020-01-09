@@ -21,7 +21,7 @@ WORKDIR $HOME/dev/dash-starter
 RUN apk add --no-cache pkgconfig curl wget openblas lapack libstdc++ freetype
 RUN apk add --no-cache --virtual .build-deps gcc g++ gfortran \
             musl-dev libxml2-dev libxslt-dev freetype-dev linux-headers \
-            openblas-dev lapack-dev py3-scipy
+            openblas-dev lapack-dev
 RUN pip install psutil \
  && pip install dill \
  && pip install joblib \
