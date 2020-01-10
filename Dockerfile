@@ -41,7 +41,7 @@ RUN pip install psutil \
  && pip install pandas \
  && pip install pandas-datareader
 RUN pip install matplotlib
-RUN pip install scikit-learn
+#RUN pip install scikit-learn
 RUN apk del .build-deps
 
 #
