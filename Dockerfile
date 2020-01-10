@@ -20,15 +20,18 @@ EXPOSE 8050
 #
 ENV HOME /root
 
+# Copy the Python dependency files
+COPY requirements.txt requirements-dev.txt $HOME/
+
 # Install the Python dependencies
-WORKDIR $HOME/dev/dash-starter
-RUN apk add --no-cache dumb-init musl linux-headers build-base \
-            bash git ca-certificates libssl1.0 libffi-dev tzdata \
-            pkgconfig curl wget openblas lapack libstdc++ freetype
+WORKDIR $HOME
+RUN apk add --no-cache musl linux-headers build-base \
+            bash git ca-certificates libffi-dev tzdata \
+            curl wget openblas lapack libstdc++ freetype
 RUN apk add --no-cache --virtual .build-deps bzip2-dev coreutils dpkg-dev dpkg \
             expat-dev findutils gcc g++ gfortran gdbm-dev libc-dev libffi-dev \
             libnsl-dev linux-headers make ncurses-dev libressl-dev readline-dev \
-            sqlite-dev tcl-dev util-linux-dev xz-dev zlib-dev git \
+            sqlite-dev util-linux-dev xz-dev zlib-dev git \
             musl-dev libxml2-dev libxslt-dev freetype-dev \
             openblas-dev lapack-dev
 RUN pip install psutil \
