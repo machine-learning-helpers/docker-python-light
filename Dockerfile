@@ -39,8 +39,7 @@ RUN pip install psutil \
  && pip install joblib \
  && pip install numpy \
  && pip install pandas \
- && pip install pandas-datareader \
- && pip install seaborn
+ && pip install pandas-datareader
 RUN pip install matplotlib
 RUN pip install scikit-learn
 RUN apk del .build-deps
