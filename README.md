@@ -1,7 +1,6 @@
 Docker light (Alpine) images to support Machine Learning (ML) in Python
 =======================================================================
 
-[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/artificialintelligence/python-alpine)](https://hub.docker.com/repository/docker/artificialintelligence/python-alpine/general)
 [![Docker Repository on Quay](https://quay.io/repository/artificialintelligence/python-alpine/status "Docker Repository on Quay")](https://quay.io/repository/artificialintelligence/python-alpine)
 
 # Overview
