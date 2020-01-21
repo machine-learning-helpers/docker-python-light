@@ -1,6 +1,7 @@
 Docker light (Alpine) images to support Machine Learning (ML) in Python
 =======================================================================
 
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/artificialintelligence/python-alpine)](https://hub.docker.com/repository/docker/artificialintelligence/python-alpine/general)
 [![Docker Repository on Quay](https://quay.io/repository/artificialintelligence/python-alpine/status "Docker Repository on Quay")](https://quay.io/repository/artificialintelligence/python-alpine)
 
 # Overview
@@ -66,7 +67,7 @@ $ cd docker-python-alpine
 
 * Build the Docker image:
 ```bash
-$ docker build -t artificialintelligence/python-alpine .
+$ docker build -t artificialintelligence/python-alpine:py37-alp-311 docker/python-3.7-alpine-3.11
 $ docker images
 REPOSITORY                            TAG           IMAGE ID     CREATED            SIZE
 artificialintelligence/python-alpine  latest        33a1ad533140 About a minute ago 500MB
@@ -78,7 +79,7 @@ artificialintelligence/python-alpine  latest        33a1ad533140 About a minute 
   [a change on GitHub](https://github.com/machine-learning-helpers/docker-python-alpine/commits/master))
 ```bash
 $ docker login
-$ docker push artificialintelligence/python-alpine
+$ docker push artificialintelligence/python-alpine:py37-alp311
 ```
 
 * Shutdown the Docker image
