@@ -1,19 +1,11 @@
-# https://github.com/machine-learning-helpers/docker-python-alpine/tree/master/docker/python-3.8-alpine-3.11/Dockerfile
+# https://github.com/machine-learning-helpers/docker-python-alpine/tree/master/docker/alpine-3.11/Dockerfile
 
 # See also
-# * Python 3.8.1 Alpine 3.11
-# * Image on Docker Hub/Cloud: 
-# * Dockerfile: https://github.com/docker-library/python/blob/d2a2b4f7422aac78c7d5ea6aadc49d009d184a5f/3.8/alpine3.11/Dockerfile
-# * Python 3.7.6 Alpine 3.11
-# * Image on Docker Hub/Cloud: https://hub.docker.com/layers/python/library/python/3.7.6-alpine3.11/images/sha256-303563b7b71e945c3a27f49d8cd9b58183b667437ab875639042ab253cf7af56
-# * Dockerfile: https://github.com/docker-library/python/blob/d2a2b4f7422aac78c7d5ea6aadc49d009d184a5f/3.7/alpine3.11/Dockerfile
-#
-# * Alternate images:
-#   + Apline Python: https://github.com/jfloff/alpine-python
-#   + Docker Pandas: https://github.com/amancevice/docker-pandas
-#
+# * Alpine 3.11 (featuring Python 3.8.1)
+# * Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
+# * Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/ae7bffab75367525cd3c799cb0ecafa4858e6446/x86_64/Dockerfile
 
-FROM python:3.8.1-alpine3.11
+FROM alpine:3.11
 
 LABEL maintainer "Denis Arnaud <denis.arnaud_fedora@m4x.org>"
 
@@ -40,13 +32,13 @@ RUN apk update && \
             libnsl-dev ncurses-dev libressl-dev readline-dev \
             sqlite-dev libxml2-dev libxslt-dev make \
             py-scipy
-RUN pip3 install -U pip \
- && pip3 install -U psutil \
- && pip3 install -U dill \
- && pip3 install -U joblib \
- && pip3 install -U numpy \
- && pip3 install -U pandas \
- && pip3 install -U pandas-datareader
+RUN pip3 install -U pip
+RUN pip3 install -U psutil
+RUN pip3 install -U dill
+RUN pip3 install -U joblib
+RUN pip3 install -U numpy
+RUN pip3 install -U pandas
+RUN pip3 install -U pandas-datareader
 RUN pip3 install -U matplotlib
 RUN pip3 install -U scikit-learn
 #RUN apk del .build-deps

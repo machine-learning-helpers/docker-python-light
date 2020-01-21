@@ -1,4 +1,4 @@
-# https://github.com/machine-learning-helpers/docker-python-alpine/tree/master/Dockerfile
+# https://github.com/machine-learning-helpers/docker-python-alpine/tree/master/docker/python-3.7-alpine-3.11/Dockerfile
 
 # See also
 # * Python 3.7.6 Alpine 3.11
