@@ -30,7 +30,7 @@ RUN apk update && \
             gcc g++ gfortran cython file libffi-dev libressl-dev \
             musl-dev lapack-dev openblas-dev libstdc++ freetype-dev \
             libnsl-dev ncurses-dev libressl-dev readline-dev \
-            sqlite-dev libxml2-dev libxslt-dev make \
+            sqlite-dev postgresql-dev libxml2-dev libxslt-dev make \
             py-scipy
 RUN pip3 install -U pip
 RUN pip3 install -U psutil
@@ -41,6 +41,7 @@ RUN pip3 install -U pandas
 RUN pip3 install -U pandas-datareader
 RUN pip3 install -U matplotlib
 RUN pip3 install -U scikit-learn
+RUN pip3 install -U psycopg2
 #RUN apk del .build-deps
 
 #

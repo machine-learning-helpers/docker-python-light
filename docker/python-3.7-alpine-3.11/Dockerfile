@@ -31,7 +31,7 @@ RUN apk add --no-cache musl linux-headers build-base \
 RUN apk add --no-cache --virtual .build-deps bzip2-dev coreutils dpkg-dev dpkg \
             expat-dev findutils gcc g++ gfortran gdbm-dev libc-dev libffi-dev \
             libnsl-dev linux-headers make ncurses-dev libressl-dev readline-dev \
-            sqlite-dev util-linux-dev xz-dev zlib-dev git \
+            sqlite-dev postgresql-dev util-linux-dev xz-dev zlib-dev git \
             musl-dev libxml2-dev libxslt-dev freetype-dev \
             openblas-dev lapack-dev
 RUN pip install psutil \
@@ -41,6 +41,7 @@ RUN pip install psutil \
  && pip install pandas \
  && pip install pandas-datareader
 RUN pip install matplotlib
+RUN pip install psycopg2
 #RUN pip install scikit-learn
 RUN apk del .build-deps
 

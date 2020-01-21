@@ -8,6 +8,7 @@ pandas = "*"
 numpy = "*"
 dash = "*"
 pandas-datareader = "*"
+psycopg2 = "*"
 
 [dev-packages]
 awsume = "*"
