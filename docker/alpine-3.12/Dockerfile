@@ -27,7 +27,7 @@ RUN apk update && \
             bzip2-dev xz-dev zlib-dev util-linux-dev coreutils \
             dpkg-dev dpkg expat-dev findutils \
             libstdc++ gdbm-dev libc-dev \
-            man man-pages bash bash-doc bash-completion git vim \
+            man-pages bash bash-doc bash-completion git vim \
             musl linux-headers build-base ca-certificates \
             gcc g++ gfortran cython file libffi-dev libressl-dev \
             musl-dev lapack-dev openblas-dev libstdc++ freetype-dev \
