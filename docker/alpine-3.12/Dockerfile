@@ -1,13 +1,13 @@
 #
-# Source: https://github.com/machine-learning-helpers/docker-python-alpine/tree/master/docker/alpine-3.11/Dockerfile
+# Source: https://github.com/machine-learning-helpers/docker-python-alpine/tree/master/docker/alpine-3.12/Dockerfile
 # On Docker Hub: https://hub.docker.com/repository/docker/artificialintelligence/python-alpine/general
 #
 # See also
-# * Alpine 3.11 (featuring Python 3.8.2)
+# * Alpine 3.12 (featuring Python 3.8.4)
 # * Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
-# * Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.11/x86_64/Dockerfile
+# * Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.12/x86_64/Dockerfile
 
-FROM alpine:3.11
+FROM alpine:3.12
 
 LABEL maintainer "Denis Arnaud <denis.arnaud_fedora@m4x.org>"
 

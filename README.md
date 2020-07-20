@@ -37,7 +37,10 @@ That Docker image is intended to run any collection of Dash applications.
 * General purpose light Python/Alpine Docker image:
   https://github.com/machine-learning-helpers/docker-python-alpine
 * Native Python/Alpine Docker images:
-  https://github.com/docker-library/python/tree/master/3.7/alpine3.11
+  + https://github.com/docker-library/python/tree/master/3.8/alpine3.12
+  + https://github.com/docker-library/python/tree/master/3.8/alpine3.11
+  + https://github.com/docker-library/python/tree/master/3.7/alpine3.12
+  + https://github.com/docker-library/python/tree/master/3.7/alpine3.11
 
 # Simple use
 * Download the Docker image:

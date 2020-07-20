@@ -1,3 +1,4 @@
+-i https://pypi.org/simple
 awscli==1.17.6
 awsume==4.1.11
 boto3==1.11.6
