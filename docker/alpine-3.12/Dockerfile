@@ -3,7 +3,7 @@
 # On Docker Hub: https://hub.docker.com/repository/docker/artificialintelligence/python-alpine/general
 #
 # See also
-# * Alpine 3.12 (featuring Python 3.8.4)
+# * Alpine 3.12 (featuring Python 3.8.5)
 # * Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
 # * Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.12/x86_64/Dockerfile
 
@@ -32,12 +32,16 @@ RUN apk update && \
             gcc g++ gfortran cython file libffi-dev libressl-dev \
             musl-dev lapack-dev openblas-dev libstdc++ freetype-dev \
             libnsl-dev ncurses-dev libressl-dev readline-dev \
-            sqlite-dev postgresql-dev libxml2-dev libxslt-dev make \
-            py-scipy
-RUN python3 -mpip install -U pip pipenv
-RUN python3 -mpip install -U setuptools wheel pytest twine tox psutil dill joblib
+            sqlite-dev postgresql-dev libxml2-dev libxslt-dev make
+RUN apk add --no-cache py3-pip py3-setuptools py3-wheel py3-pytest py3-tox py3-psutil
+RUN python3 -mpip install -U twine dill joblib
 RUN python3 -mpip install -U numpy pandas pandas-datareader matplotlib seaborn scikit-learn
 RUN python3 -mpip install -U psycopg2
+RUN python3 -mpip install -U sphinx tox poetry build twine
+RUN python3 -mpip install -U flake8 black mypy
+RUN python3 -mpip install -U pyjq
+RUN python3 -mpip install -U protobuf simplejson
+RUN python3 -mpip install -U opentraveldata OpenTrepWrapper neobase
 #RUN apk del .build-deps
 
 #
