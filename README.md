@@ -68,7 +68,14 @@ $ git clone https://github.com/machine-learning-helpers/docker-python-alpine.git
 $ cd docker-python-alpine
 ```
 
-* Build the Docker image:
+* Build the Docker images:
+  + Alpine 3.12 / Python 3.8.5:
+```bash
+$ docker build -t artificialintelligence/python-alpine:alp312 docker/alpine-3.12
+$ docker images
+
+```
+  + Python 3.7 Alpine 3.11:
 ```bash
 $ docker build -t artificialintelligence/python-alpine:py37-alp-311 docker/python-3.7-alpine-3.11
 $ docker images
@@ -76,12 +83,13 @@ REPOSITORY                            TAG           IMAGE ID     CREATED        
 artificialintelligence/python-alpine  latest        33a1ad533140 About a minute ago 500MB
 ```
 
-* (Optional) Push the newly built image to Docker Cloud.
+* (Optional) Push the newly built images to Docker Hub.
   That step is usually not needed, as the images are automatically
   built everytime there is
   [a change on GitHub](https://github.com/machine-learning-helpers/docker-python-alpine/commits/master))
 ```bash
 $ docker login
+$ docker push artificialintelligence/python-alpine:alp312
 $ docker push artificialintelligence/python-alpine:py37-alp311
 ```
 
