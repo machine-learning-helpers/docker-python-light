@@ -1,11 +1,12 @@
 #
-# Source: https://github.com/machine-learning-helpers/docker-python-alpine/tree/master/docker/alpine-3.12/Dockerfile
-# On Docker Hub: https://hub.docker.com/repository/docker/artificialintelligence/python-alpine/general
+# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/alpine-3.12/Dockerfile
+# On Docker Hub: https://hub.docker.com/repository/docker/artificialintelligence/python-light/general
 #
 # See also
 # * Alpine 3.12 (featuring Python 3.8.5)
 # * Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
 # * Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.12/x86_64/Dockerfile
+#
 
 FROM alpine:3.12
 
@@ -16,9 +17,6 @@ EXPOSE 5000
 
 #
 ENV HOME /root
-
-# Copy the Python dependency files
-COPY requirements.txt requirements-dev.txt $HOME/
 
 # Install the Python dependencies
 WORKDIR $HOME
@@ -56,11 +54,9 @@ RUN python3 -mpip install -U scikit-learn
 RUN python3 -mpip install -U psycopg2
 RUN python3 -mpip install -U opentraveldata OpenTrepWrapper neobase
 
-#RUN rm -rf /var/cache/apk/*
+RUN rm -rf /var/cache/apk/*
 #RUN apk del .build-deps
 
 #
 #ENTRYPOINT ["/bin/bash"]
-CMD /bin/bash
-
-
+CMD ["/bin/bash"]

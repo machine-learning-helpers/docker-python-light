@@ -1,41 +1,78 @@
-Docker light (Alpine) images to support Machine Learning (ML) in Python
-=======================================================================
+Docker light images to support Machine Learning (ML) in Python
+==============================================================
 
 [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/artificialintelligence/python-alpine)](https://hub.docker.com/repository/docker/artificialintelligence/python-alpine/general)
 [![Docker Repository on Quay](https://quay.io/repository/artificialintelligence/python-alpine/status "Docker Repository on Quay")](https://quay.io/repository/artificialintelligence/python-alpine)
 
 # Overview
-[That project](https://github.com/machine-learning-helpers/docker-python-alpine)
+[That project](https://github.com/machine-learning-helpers/docker-python-light)
 produces
-[Docker images](https://cloud.docker.com/u/artificialintelligence/repository/docker/artificialintelligence/python-alpine),
-which provide ready-to-use Artificial Intelligence (AI) / Machine Learning (ML)
-Python Pandas/Dash environments on the
-[latest Alpine (light) Linux distribution](https://hub.docker.com/layers/python/library/python/3.7.6-alpine3.11/images/sha256-303563b7b71e945c3a27f49d8cd9b58183b667437ab875639042ab253cf7af56).
+[light Docker images](https://hub.docker.com/repository/docker/artificialintelligence/python-light/tags),
+which provide ready-to-use Artificial Intelligence (AI) / Machine Learning (ML) /
+Data Science ready Python environments on the
+[latest Python Linux light distributions](https://hub.docker.com/_/python).
 
-The Docker images just add some standard ML-related Python packages such as
-NumPy, Pandas and Dash/Plotly, on top of other general purpose Python/Alpine
-Docker image produced by a
-[dedicated project on GitHub](https://github.com/docker-library/python/tree/master/3.7/alpine3.11/Dockerfile).
+As well explained in
+[a PythonSpeed article from April 2020](https://pythonspeed.com/articles/base-image-python-docker-images/),
+the best light images for Python production operations are based on Debian
+(the latest stable release being, as of mid-2020,
+[Debian 10 named Buster](https://www.debian.org/releases/buster/)).
+For historical reasons (and for the challenge!), Alpine-based distributions
+are still maintained too.
 
-In the Python/Alpine Docker image, Python packages are installed by the `pip`
-utility. For testing purposes, outside of the Docker container,
-Python virtual environments may be installed thanks to Pyenv and `pipenv`,
+These Python Docker light images are aimed at deploying Data Science
+applications on operational environments such as cloud-based Kubernetes
+clusters or services (_e.g._,
+[AWS EKS](https://aws.amazon.com/eks),
+[Azure AKS](https://azure.microsoft.com/en-us/services/kubernetes-service/),
+[IBM/RedHat OpenShift v4](https://www.redhat.com/en/openshift-4) or
+[Google GKE](https://cloud.google.com/kubernetes-engine)).
+
+The author of this repository also maintains Data Science Python Docker images
+for every day development purposes in a
+[dedicated GitHub repository](https://github.com/machine-learning-helpers/docker-python-jupyter/)
+and
+[Docker Hub space](https://hub.docker.com/repository/docker/artificialintelligence/python-jupyter).
+Thanks to
+[Docker multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/),
+one can easily have in the same Docker specification files two images, one for
+every day data science work, and the other one to deploy the corresponding
+applications onto production environments.
+
+The Docker images of this repository just add some standard ML-related Python
+packages such as NumPy, Pandas and Dash/Plotly, on top of the native images
+maintained by the [Docker Python project](https://github.com/docker-library/python)
+* [Python 3.8 - Debian Buster](https://github.com/docker-library/python/tree/master/3.8/buster)
+* [Python 3.8 - Alpine 3.12](https://github.com/docker-library/python/tree/master/3.8/alpine3.12)
+* [Python 3.8 - Alpine 3.11](https://github.com/docker-library/python/tree/master/3.8/alpine3.11)
+
+In the Docker image, Python packages are installed by the `pip` utility. For testing purposes,
+outside of the Docker container, Python virtual environments may be installed thanks to Pyenv and `pipenv`,
 as detailed in the
 [dedicated procedure](http://github.com/machine-learning-helpers/induction-python/tree/master/installation/virtual-env)
 on the
 [Python induction notebook sub-project](http://github.com/machine-learning-helpers/induction-python).
-Any additional Python module may be installed in a dedicated
-virtual environment, controlled by `pipenv` through local `Pipfile`
-(and `Pipfile.lock`) files, which should be versioned.
+
+Any additional Python module may be installed either:
+* With `pip` and some `requirements.txt` dependency specification file:
+```bash
+$ python3 -mpip install -r requirements.txt
+```
+* In a dedicated virtual environment, controlled by `pipenv` through local `Pipfile`
+  (and potentially `Pipfile.lock`) files, which should be versioned:
+```bash
+$ pipenv --rm; pipenv install; pipenv install --dev
+```
 
 On the other hand, the Docker images install those modules globally.
 
-That Docker image is intended to run any collection of Dash applications.
+The Docker images of this repository are intended to run any collection
+of Dash applications.
 
 ## See also
 * [Images on Docker Cloud](https://cloud.docker.com/u/artificialintelligence/repository/docker/artificialintelligence/python-alpine)
 * General purpose light Python/Alpine Docker image:
-  https://github.com/machine-learning-helpers/docker-python-alpine
+  https://github.com/machine-learning-helpers/docker-python-light
 * Native Python/Alpine Docker images:
   + https://github.com/docker-library/python/tree/master/3.8/alpine3.12
   + https://github.com/docker-library/python/tree/master/3.8/alpine3.11
@@ -45,7 +82,7 @@ That Docker image is intended to run any collection of Dash applications.
 # Simple use
 * Download the Docker image:
 ```bash
-$ docker pull artificialintelligence/python-alpine
+$ docker pull artificialintelligence/python-light
 ```
 
 * Launch Dash or Flask within the Docker image (where `<port>` corresponds
@@ -61,43 +98,48 @@ Note that the port (8050 by default) may be changed as per your convenience.
 
 # Build your own Docker image
 * Clone the
-  [Git repository](https://github.com/machine-learning-helpers/docker-python-alpine):
+  [Git repository](https://github.com/machine-learning-helpers/docker-python-light):
 ```bash
 $ mkdir -p ~/dev/ml && cd ~/dev/ml
-$ git clone https://github.com/machine-learning-helpers/docker-python-alpine.git
-$ cd docker-python-alpine
+$ git clone https://github.com/machine-learning-helpers/docker-python-light.git
+$ cd docker-python-light
 ```
 
 * Build the Docker images:
+  + Debian Buster / Python 3.8:
+```bash
+$ docker build -t artificialintelligence/python-light:py38-buster docker/python-3.8-buster/Dockerfile
+```
   + Alpine 3.12 / Python 3.8.5:
 ```bash
-$ docker build -t artificialintelligence/python-alpine:alp312 docker/alpine-3.12
+$ docker build -t artificialintelligence/python-light:py38-alp312 docker/alpine-3.12
 $ docker images
 
 ```
-  + Python 3.7 Alpine 3.11:
+  + Python 3.8 Alpine 3.11:
 ```bash
-$ docker build -t artificialintelligence/python-alpine:py37-alp-311 docker/python-3.7-alpine-3.11
+$ docker build -t artificialintelligence/python-light:py38-alp311 docker/python-3.8-alpine-3.11
 $ docker images
 REPOSITORY                            TAG           IMAGE ID     CREATED            SIZE
-artificialintelligence/python-alpine  latest        33a1ad533140 About a minute ago 500MB
+artificialintelligence/python-light  latest        33a1ad533140 About a minute ago 500MB
 ```
 
 * (Optional) Push the newly built images to Docker Hub.
   That step is usually not needed, as the images are automatically
   built everytime there is
-  [a change on GitHub](https://github.com/machine-learning-helpers/docker-python-alpine/commits/master))
+  [a change on GitHub](https://github.com/machine-learning-helpers/docker-python-light/commits/master))
 ```bash
 $ docker login
-$ docker push artificialintelligence/python-alpine:alp312
-$ docker push artificialintelligence/python-alpine:py37-alp311
+$ docker push artificialintelligence/python-light:py38-buster
+$ docker push artificialintelligence/python-light:py38-alp312
+$ docker push artificialintelligence/python-light:py38-alp311
 ```
 
 * Shutdown the Docker image
 ```bash
 $ docker ps
 CONTAINER ID IMAGE                    COMMAND                   CREATED        STATUS        PORTS                  NAMES
-7b69efc9dc9a ai/python-alpine         "/bin/sh -c 'python …"    48 seconds ago Up 47 seconds 0.0.0.0:9000->8050/tcp vigilant_merkle
+7b69efc9dc9a ai/python-light          "/bin/sh -c 'python …"    48 seconds ago Up 47 seconds 0.0.0.0:9000->8050/tcp vigilant_merkle
 $ docker kill vigilant_merkle
 vigilant_merkle
 $ docker ps

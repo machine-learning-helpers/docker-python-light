@@ -1,19 +1,18 @@
-# https://github.com/machine-learning-helpers/docker-python-alpine/tree/master/docker/python-3.8-alpine-3.11/Dockerfile
+#
+# https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/python-3.8-alpine-3.11/Dockerfile
+#
 
 # See also
-# * Python 3.8.1 Alpine 3.11
-# * Image on Docker Hub/Cloud: 
-# * Dockerfile: https://github.com/docker-library/python/blob/d2a2b4f7422aac78c7d5ea6aadc49d009d184a5f/3.8/alpine3.11/Dockerfile
-# * Python 3.7.6 Alpine 3.11
-# * Image on Docker Hub/Cloud: https://hub.docker.com/layers/python/library/python/3.7.6-alpine3.11/images/sha256-303563b7b71e945c3a27f49d8cd9b58183b667437ab875639042ab253cf7af56
-# * Dockerfile: https://github.com/docker-library/python/blob/d2a2b4f7422aac78c7d5ea6aadc49d009d184a5f/3.7/alpine3.11/Dockerfile
+# * Python 3.8.5 Alpine 3.11
+# * Image on Docker Hub/Cloud: https://hub.docker.com/layers/python/library/python/3.8.5-alpine3.11/images/sha256-9b46c6e1121918263d4ec634b8a6c29ff4c28fa50a07dd116ad2f9a013e90425?context=explore
+# * Dockerfile: https://github.com/docker-library/python/blob/master/3.8/alpine3.11/Dockerfile
 #
 # * Alternate images:
 #   + Apline Python: https://github.com/jfloff/alpine-python
 #   + Docker Pandas: https://github.com/amancevice/docker-pandas
 #
 
-FROM python:3.8.1-alpine3.11
+FROM python:3.8.5-alpine3.11
 
 LABEL maintainer "Denis Arnaud <denis.arnaud_fedora@m4x.org>"
 

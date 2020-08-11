@@ -1,10 +1,10 @@
 #
-# File: https://github.com/machine-learning-helpers/docker-python-alpine/tree/master/docker/python-3.8-buster/Dockerfile
+# File: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/python-3.8-buster/Dockerfile
 #
 
-# See also
-# * Python 3.8 Debian Buster: https://hub.docker.com/_/python?tab=tags&page=1&name=3.8-buster
-#   + Image on Docker Hub/Cloud: 
+# See also:
+# * Python 3.8 Debian Buster:
+#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/python?tab=tags&page=1&name=3.8-buster
 #   + Dockerfile: https://github.com/docker-library/python/blob/9e32f5480f737af51e46f23bd172ea81288dfdf5/3.8/buster/Dockerfile
 # * The best Docker base image for your Python application, Apr. 2020:
 #   https://pythonspeed.com/articles/base-image-python-docker-images/
