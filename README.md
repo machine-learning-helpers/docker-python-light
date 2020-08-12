@@ -1,8 +1,8 @@
 Docker light images to support Machine Learning (ML) in Python
 ==============================================================
 
-[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/artificialintelligence/python-alpine)](https://hub.docker.com/repository/docker/artificialintelligence/python-alpine/general)
-[![Docker Repository on Quay](https://quay.io/repository/artificialintelligence/python-alpine/status "Docker Repository on Quay")](https://quay.io/repository/artificialintelligence/python-alpine)
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/artificialintelligence/python-light)](https://hub.docker.com/repository/docker/artificialintelligence/python-light/general)
+[![Docker Repository on Quay](https://quay.io/repository/artificialintelligence/python-light/status "Docker Repository on Quay")](https://quay.io/repository/artificialintelligence/python-light)
 
 # Overview
 [That project](https://github.com/machine-learning-helpers/docker-python-light)
@@ -106,22 +106,17 @@ $ cd docker-python-light
 ```
 
 * Build the Docker images:
-  + Debian Buster / Python 3.8:
+  + `py38-buster` tag: Debian Buster / Python 3.8:
 ```bash
 $ docker build -t artificialintelligence/python-light:py38-buster docker/python-3.8-buster/Dockerfile
 ```
-  + Alpine 3.12 / Python 3.8.5:
+  + `py38-alp312` tag: Alpine 3.12 / Python 3.8.5:
 ```bash
 $ docker build -t artificialintelligence/python-light:py38-alp312 docker/alpine-3.12
-$ docker images
-
 ```
-  + Python 3.8 Alpine 3.11:
+  + `py38-alp311` tag: Alpine 3.11 / Python 3.8.2:
 ```bash
-$ docker build -t artificialintelligence/python-light:py38-alp311 docker/python-3.8-alpine-3.11
-$ docker images
-REPOSITORY                            TAG           IMAGE ID     CREATED            SIZE
-artificialintelligence/python-light  latest        33a1ad533140 About a minute ago 500MB
+$ docker build -t artificialintelligence/python-light:py38-alp311 docker/alpine-3.11
 ```
 
 * (Optional) Push the newly built images to Docker Hub.
@@ -133,6 +128,23 @@ $ docker login
 $ docker push artificialintelligence/python-light:py38-buster
 $ docker push artificialintelligence/python-light:py38-alp312
 $ docker push artificialintelligence/python-light:py38-alp311
+```
+
+* (Optional) Push the newly built images to Quay.io.
+  That step is usually not needed, as the images are automatically
+  built everytime there is
+  [a change on GitHub](https://github.com/machine-learning-helpers/docker-python-light/commits/master))
+```bash
+$ docker login quay.io
+#
+$ docker tag artificialintelligence/python-light:py38-buster quay.io/artificialintelligence/python-light:py38-buster
+$ docker push quay.io/artificialintelligence/python-light:py38-buster
+#
+$ docker tag artificialintelligence/python-light:py38-alp312 quay.io/artificialintelligence/python-light:py38-alp312
+$ docker push quay.io/artificialintelligence/python-light:py38-alp312
+#
+$ docker tag artificialintelligence/python-light:py38-alp311 quay.io/artificialintelligence/python-light:py38-alp311
+$ docker push quay.io/artificialintelligence/python-light:py38-alp311
 ```
 
 * Shutdown the Docker image

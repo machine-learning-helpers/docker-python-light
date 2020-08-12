@@ -1,5 +1,7 @@
 #
 # File: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/python-3.8-buster/Dockerfile
+# On Docker Hub: https://hub.docker.com/repository/docker/artificialintelligence/python-light/general
+# Usual Docker tag: py38-buster (artificialintelligence/python-light:py38-buster)
 #
 
 # See also:
