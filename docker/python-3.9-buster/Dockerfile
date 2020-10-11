@@ -1,5 +1,5 @@
 #
-# File: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/python-3.9-buster/Dockerfile
+# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/python-3.9-buster/Dockerfile
 # On Docker Hub: https://hub.docker.com/repository/docker/artificialintelligence/python-light/general
 # Usual Docker tag: py39-buster (artificialintelligence/python-light:py39-buster)
 #

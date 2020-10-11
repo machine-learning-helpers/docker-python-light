@@ -1,15 +1,20 @@
 #
-# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/alpine-3.12/Dockerfile
+# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/python-3.9-alpine-3.12/Dockerfile
 # On Docker Hub: https://hub.docker.com/repository/docker/artificialintelligence/python-light/general
-# Usual Docker tag: py38-alp312 (artificialintelligence/python-light:py38-alp312)
+# Usual Docker tag: py39-alp312 (artificialintelligence/python-light:py39-alp312)
 #
-# See also
+# See also:
+# * Python 3.9 Alpine 3.12:
+#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/python?tab=tags&page=1&name=3.9-alpine3.12
+#   + Dockerfile: https://github.com/docker-library/python/blob/master/3.9/alpine3.12/Dockerfile
+# * The best Docker base image for your Python application, Apr. 2020:
+#   https://pythonspeed.com/articles/base-image-python-docker-images/
 # * Alpine 3.12 (featuring Python 3.8.5)
-# * Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
-# * Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.12/x86_64/Dockerfile
+#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
+#   + Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.12/x86_64/Dockerfile
 #
 
-FROM alpine:3.12
+FROM python:3.9-alpine3.12
 
 LABEL maintainer "Denis Arnaud <denis.arnaud_fedora@m4x.org>"
 
@@ -52,7 +57,6 @@ RUN python3 -mpip install -U pandas-datareader
 RUN python3 -mpip install -U matplotlib
 RUN python3 -mpip install -U seaborn
 RUN python3 -mpip install -U scikit-learn
-RUN python3 -mpip install -U flask flask_restful connexion requests
 RUN python3 -mpip install -U psycopg2
 RUN python3 -mpip install -U opentraveldata OpenTrepWrapper neobase
 
