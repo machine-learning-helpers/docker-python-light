@@ -1,13 +1,13 @@
 #
-# File: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/python-3.8-buster/Dockerfile
+# File: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/python-3.9-buster/Dockerfile
 # On Docker Hub: https://hub.docker.com/repository/docker/artificialintelligence/python-light/general
-# Usual Docker tag: py38-buster (artificialintelligence/python-light:py38-buster)
+# Usual Docker tag: py39-buster (artificialintelligence/python-light:py39-buster)
 #
 
 # See also:
-# * Python 3.8 Debian Buster:
-#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/python?tab=tags&page=1&name=3.8-buster
-#   + Dockerfile: https://github.com/docker-library/python/blob/master/3.8/buster/Dockerfile
+# * Python 3.9 Debian Buster:
+#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/python?tab=tags&page=1&name=3.9-buster
+#   + Dockerfile: https://github.com/docker-library/python/blob/master/3.9/buster/Dockerfile
 # * The best Docker base image for your Python application, Apr. 2020:
 #   https://pythonspeed.com/articles/base-image-python-docker-images/
 # * General purpose Debian 10 (Buster) C++/Python development image:
@@ -15,7 +15,7 @@
 #   + Dockerfile: https://github.com/cpp-projects-showcase/docker-images/tree/master/debian10
 #
 
-FROM python:3.8-buster
+FROM python:3.9-buster
 
 LABEL maintainer "Denis Arnaud <denis.arnaud_fedora@m4x.org>"
 

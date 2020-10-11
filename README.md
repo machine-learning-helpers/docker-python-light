@@ -42,9 +42,13 @@ applications onto production environments.
 The Docker images of this repository just add some standard ML-related Python
 packages such as NumPy, Pandas and Dash/Plotly, on top of the native images
 maintained by the [Docker Python project](https://github.com/docker-library/python)
-* [Python 3.8 - Debian Buster](https://github.com/docker-library/python/tree/master/3.8/buster)
-* [Python 3.8 - Alpine 3.12](https://github.com/docker-library/python/tree/master/3.8/alpine3.12)
-* [Python 3.8 - Alpine 3.11](https://github.com/docker-library/python/tree/master/3.8/alpine3.11)
+* [Python 3.9]https://github.com/docker-library/python/tree/master/3.9/)
+  + [Python 3.9 - Debian Buster](https://github.com/docker-library/python/tree/master/3.9/buster)
+  + [Python 3.9 - Alpine 3.12](https://github.com/docker-library/python/tree/master/3.9/alpine3.12)
+* [Python 3.8]https://github.com/docker-library/python/tree/master/3.8/)
+  + [Python 3.8 - Debian Buster](https://github.com/docker-library/python/tree/master/3.8/buster)
+  + [Python 3.8 - Alpine 3.12](https://github.com/docker-library/python/tree/master/3.8/alpine3.12)
+  + [Python 3.8 - Alpine 3.11](https://github.com/docker-library/python/tree/master/3.8/alpine3.11)
 
 In the Docker image, Python packages are installed by the `pip` utility. For testing purposes,
 outside of the Docker container, Python virtual environments may be installed thanks to Pyenv and `pipenv`,
@@ -70,14 +74,28 @@ The Docker images of this repository are intended to run any collection
 of Dash applications.
 
 ## See also
-* [Images on Docker Cloud](https://cloud.docker.com/u/artificialintelligence/repository/docker/artificialintelligence/python-alpine)
+* [Images on Docker Cloud](https://cloud.docker.com/u/artificialintelligence/repository/docker/artificialintelligence/python-light)
+* [Images on Quay.io](https://quay.io/repository/cpppythondevelopment/base?tab=tags)
 * General purpose light Python/Alpine Docker image:
   https://github.com/machine-learning-helpers/docker-python-light
-* Native Python/Alpine Docker images:
+* Native Python Docker images:
+  + https://github.com/docker-library/python/tree/master/3.9/buster
+  + https://github.com/docker-library/python/tree/master/3.9/alpine3.12
+  + https://github.com/docker-library/python/tree/master/3.8/buster
   + https://github.com/docker-library/python/tree/master/3.8/alpine3.12
   + https://github.com/docker-library/python/tree/master/3.8/alpine3.11
+  + https://github.com/docker-library/python/tree/master/3.7/buster
+  + https://github.com/docker-library/python/tree/master/3.7/stretch
   + https://github.com/docker-library/python/tree/master/3.7/alpine3.12
   + https://github.com/docker-library/python/tree/master/3.7/alpine3.11
+* [Debian releases](https://wiki.debian.org/DebianReleases)
+  + [Debian 11 Bullseye (TBA)](https://wiki.debian.org/DebianBullseye)
+  + [Debian 10 Buster](https://wiki.debian.org/DebianBuster)
+  + [Debian 8 Stretch](https://wiki.debian.org/DebianStretch)
+* [Alpine Linux releases](https://wiki.alpinelinux.org/wiki/Alpine_Linux:Releases)
+  + [Alpine 3.13 (TBA)](https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.13.0)
+  + [Alpine 3.12](https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.12.0)
+  + [Alpine 3.11](https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.11.0)
 
 # Simple use
 * Download the Docker image:
@@ -88,7 +106,7 @@ $ docker pull artificialintelligence/python-light
 * Launch Dash or Flask within the Docker image (where `<port>` corresponds
   to the local port on which Dash or Flask is launched; the default is 8050):
 ```bash
-$ docker run -d -p <port>:8050 artificialintelligence/python-alpine
+$ docker run -d -p <port>:8050 artificialintelligence/python-light
 ```
 
 ## Interact with the Dash application in a Web browser
@@ -106,6 +124,10 @@ $ cd docker-python-light
 ```
 
 * Build the Docker images:
+  + `py39-buster` tag: Debian Buster / Python 3.9:
+```bash
+$ docker build -t artificialintelligence/python-light:py39-buster docker/python-3.9-buster/Dockerfile
+```
   + `py38-buster` tag: Debian Buster / Python 3.8:
 ```bash
 $ docker build -t artificialintelligence/python-light:py38-buster docker/python-3.8-buster/Dockerfile
@@ -125,6 +147,7 @@ $ docker build -t artificialintelligence/python-light:py38-alp311 docker/alpine-
   [a change on GitHub](https://github.com/machine-learning-helpers/docker-python-light/commits/master))
 ```bash
 $ docker login
+$ docker push artificialintelligence/python-light:py39-buster
 $ docker push artificialintelligence/python-light:py38-buster
 $ docker push artificialintelligence/python-light:py38-alp312
 $ docker push artificialintelligence/python-light:py38-alp311
@@ -136,6 +159,9 @@ $ docker push artificialintelligence/python-light:py38-alp311
   [a change on GitHub](https://github.com/machine-learning-helpers/docker-python-light/commits/master))
 ```bash
 $ docker login quay.io
+#
+$ docker tag artificialintelligence/python-light:py39-buster quay.io/artificialintelligence/python-light:py39-buster
+$ docker push quay.io/artificialintelligence/python-light:py39-buster
 #
 $ docker tag artificialintelligence/python-light:py38-buster quay.io/artificialintelligence/python-light:py38-buster
 $ docker push quay.io/artificialintelligence/python-light:py38-buster

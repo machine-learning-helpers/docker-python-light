@@ -1,0 +1,16 @@
+[alias]
+        st = status
+        cl = clone
+        co = checkout
+        ci = commit
+        br = branch
+        fe = fetch
+        pl = pull
+        ps = push
+
+[push]
+        default = tracking
+
+[color]
+        ui = auto
+
