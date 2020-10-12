@@ -41,7 +41,8 @@ RUN apk update && \
 RUN python3 -mpip install -U build
 RUN python3 -mpip install -U dill joblib
 RUN python3 -mpip install -U twine
-RUN python3 -mpip install -U sphinx poetry
+RUN python3 -mpip install -U sphinx
+#RUN python3 -mpip install -U poetry
 RUN python3 -mpip install -U flake8 black mypy
 RUN python3 -mpip install -U simplejson
 RUN python3 -mpip install -U pyjq
