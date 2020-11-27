@@ -67,7 +67,7 @@ RUN apt-get -y install libmpich-dev libopenmpi-dev \
 	libicu-dev libprotobuf-dev protobuf-compiler \
 	python libpython-dev python3 libpython3-dev \
 	python3-django libapache2-mod-wsgi-py3 \
-	libgeos++-dev \
+	jq libgeos++-dev \
 	doxygen ghostscript texlive-latex-recommended \
 	r-base r-base-dev \
 	rake

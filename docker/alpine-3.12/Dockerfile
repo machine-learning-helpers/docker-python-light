@@ -34,7 +34,7 @@ RUN apk update && \
 	    openssl-dev libnsl-dev libressl-dev \
             ncurses-dev readline-dev tk-dev tcl-dev lcms2-dev \
 	    jpeg-dev openjpeg-dev tiff-dev \
-            sqlite-dev postgresql-dev libxml2-dev libxslt-dev make \
+            sqlite-dev postgresql-dev libxml2-dev libxslt-dev make jq \
 	    python3-dev py3-pip py3-setuptools py3-wheel py3-pytest py3-tox \
 	    py3-psutil py3-scipy
 

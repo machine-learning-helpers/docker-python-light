@@ -37,7 +37,7 @@ RUN apk update && \
             gcc g++ gfortran cython file libffi-dev libressl-dev \
             musl-dev lapack-dev openblas-dev libstdc++ freetype-dev \
             libnsl-dev ncurses-dev libressl-dev readline-dev \
-            sqlite-dev postgresql-dev libxml2-dev libxslt-dev make \
+            sqlite-dev postgresql-dev libxml2-dev libxslt-dev make jq \
             py-scipy
 RUN pip3 install -U pip \
  && pip3 install -U psutil \
