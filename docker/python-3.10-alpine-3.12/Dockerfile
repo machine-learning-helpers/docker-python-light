@@ -1,12 +1,12 @@
 #
-# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/python-3.9-alpine-3.12/Dockerfile
+# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/python-3.10-alpine-3.12/Dockerfile
 # On Docker Hub: https://hub.docker.com/repository/docker/artificialintelligence/python-light/general
-# Usual Docker tag: py39-alp312 (artificialintelligence/python-light:py39-alp312)
+# Usual Docker tag: py310-alp312 (artificialintelligence/python-light:py310-alp312)
 #
 # See also:
-# * Python 3.9 Alpine 3.12:
-#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/python?tab=tags&page=1&name=3.9-alpine3.12
-#   + Dockerfile: https://github.com/docker-library/python/blob/master/3.9/alpine3.12/Dockerfile
+# * Python 3.10 Alpine 3.12:
+#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/python?tab=tags&page=1&name=3.10-rc-alpine3.12
+#   + Dockerfile: https://github.com/docker-library/python/blob/master/3.10-rc/alpine3.12/Dockerfile
 # * The best Docker base image for your Python application, Apr. 2020:
 #   https://pythonspeed.com/articles/base-image-python-docker-images/
 # * Alpine 3.12 (featuring Python 3.8.5)
@@ -14,7 +14,7 @@
 #   + Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.12/x86_64/Dockerfile
 #
 
-FROM python:3.9-alpine3.12
+FROM python:3.10-rc-alpine3.12
 
 LABEL maintainer "Denis Arnaud <denis.arnaud_fedora@m4x.org>"
 
