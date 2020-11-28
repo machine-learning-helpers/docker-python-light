@@ -38,7 +38,10 @@ RUN apk update && \
 	    python3-dev py3-pip py3-setuptools py3-wheel py3-pytest py3-tox \
 	    py3-psutil py3-scipy
 
+RUN python3 -mpip install -U pip
 RUN python3 -mpip install -U build
+RUN python3 -mpip install -U wheel
+RUN python3 -mpip install -U scikit-build
 RUN python3 -mpip install -U dill joblib
 RUN python3 -mpip install -U twine
 RUN python3 -mpip install -U sphinx
