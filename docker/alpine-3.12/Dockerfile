@@ -39,7 +39,7 @@ RUN apk update && \
 	    py3-psutil py3-scipy
 
 RUN python3 -mpip install -U pip
-RUN python3 -mpip install -U build
+RUN python3 -mpip install -U build --ignore-installed
 RUN python3 -mpip install -U wheel
 RUN python3 -mpip install -U scikit-build
 RUN python3 -mpip install -U dill joblib
