@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+numpy = "*"
+dash = "*"
+pandas = "*"
+pandas-datareader = "*"
+psycopg2 = "*"
+
+[dev-packages]
+awsume = "*"
+awscli = "*"
+setuptools = "*"
+wheel = "*"
+pytest = "*"
+twine = "*"
+tox = "*"
+
+[requires]
+python_version = "3.8"

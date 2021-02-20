@@ -41,7 +41,8 @@ RUN apk update && \
 	    jpeg-dev openjpeg-dev tiff-dev \
             sqlite-dev postgresql-dev libxml2-dev libxslt-dev make jq \
 	    python3-dev py3-pip py3-setuptools py3-wheel py3-pytest py3-tox \
-	    py3-psutil py3-scipy
+	    py3-psutil py3-scipy \
+            rust
 
 RUN python3 -mpip install -U pip
 RUN python3 -mpip install -U build
@@ -67,3 +68,4 @@ RUN rm -rf /var/cache/apk/*
 #
 #ENTRYPOINT ["/bin/bash"]
 CMD ["/bin/bash"]
+

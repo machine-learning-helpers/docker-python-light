@@ -45,9 +45,11 @@ packages such as NumPy, Pandas and Dash/Plotly, on top of the native images
 maintained by the [Docker Python project](https://github.com/docker-library/python)
 * [Python 3.9]https://github.com/docker-library/python/tree/master/3.9/)
   + [Python 3.9 - Debian Buster](https://github.com/docker-library/python/tree/master/3.9/buster)
+  + [Python 3.9 - Alpine 3.13](https://github.com/docker-library/python/tree/master/3.9/alpine3.13)
   + [Python 3.9 - Alpine 3.12](https://github.com/docker-library/python/tree/master/3.9/alpine3.12)
 * [Python 3.8]https://github.com/docker-library/python/tree/master/3.8/)
   + [Python 3.8 - Debian Buster](https://github.com/docker-library/python/tree/master/3.8/buster)
+  + [Python 3.8 - Alpine 3.13](https://github.com/docker-library/python/tree/master/3.8/alpine3.13)
   + [Python 3.8 - Alpine 3.12](https://github.com/docker-library/python/tree/master/3.8/alpine3.12)
   + [Python 3.8 - Alpine 3.11](https://github.com/docker-library/python/tree/master/3.8/alpine3.11)
 
@@ -77,30 +79,35 @@ of Dash applications.
 ## See also
 * [Images on Docker Cloud](https://cloud.docker.com/u/artificialintelligence/repository/docker/artificialintelligence/python-light)
 * [Images on Quay.io](https://quay.io/repository/artificialintelligence/python-light)
-* General purpose light Python/Alpine OCI image:
+* General purpose light Python/Debian/Alpine OCI image:
   https://github.com/machine-learning-helpers/docker-python-light
 * [Native Python OCI images](https://github.com/docker-library/python):
   + [Python 3.10](https://github.com/docker-library/python/tree/master/3.10-rc)
     - https://github.com/docker-library/python/tree/master/3.10-rc/buster
-		- https://github.com/docker-library/python/tree/master/3.10-rc/alpine3.12
+    - https://github.com/docker-library/python/tree/master/3.10-rc/alpine3.13
+    - https://github.com/docker-library/python/tree/master/3.10-rc/alpine3.12
   + [Python 3.9](https://github.com/docker-library/python/tree/master/3.9)
     - https://github.com/docker-library/python/tree/master/3.9/buster
+    - https://github.com/docker-library/python/tree/master/3.9/alpine3.13
     - https://github.com/docker-library/python/tree/master/3.9/alpine3.12
   + [Python 3.8](https://github.com/docker-library/python/tree/master/3.8)
     - https://github.com/docker-library/python/tree/master/3.8/buster
+    - https://github.com/docker-library/python/tree/master/3.8/alpine3.13
     - https://github.com/docker-library/python/tree/master/3.8/alpine3.12
     - https://github.com/docker-library/python/tree/master/3.8/alpine3.11
   + [Python 3.7](https://github.com/docker-library/python/tree/master/3.7)
     - https://github.com/docker-library/python/tree/master/3.7/buster
     - https://github.com/docker-library/python/tree/master/3.7/stretch
+    - https://github.com/docker-library/python/tree/master/3.7/alpine3.13
     - https://github.com/docker-library/python/tree/master/3.7/alpine3.12
     - https://github.com/docker-library/python/tree/master/3.7/alpine3.11
 * [Debian releases](https://wiki.debian.org/DebianReleases)
   + [Debian 11 Bullseye (TBA)](https://wiki.debian.org/DebianBullseye)
   + [Debian 10 Buster](https://wiki.debian.org/DebianBuster)
-  + [Debian 8 Stretch](https://wiki.debian.org/DebianStretch)
+  + [Debian 9 Stretch](https://wiki.debian.org/DebianStretch)
 * [Alpine Linux releases](https://wiki.alpinelinux.org/wiki/Alpine_Linux:Releases)
-  + [Alpine 3.13 (TBA)](https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.13.0)
+  + [Alpine 3.14 (TBA)](https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.13.0)
+  + [Alpine 3.13](https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.13.0)
   + [Alpine 3.12](https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.12.0)
   + [Alpine 3.11](https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.11.0)
 
@@ -131,10 +138,14 @@ $ cd docker-python-light
 ```
 
 * Build the OCI images (here with Docker, but any other tool may be used):
-  + Python 3.10 (work in progress, does not work yet, as of end 2020)
+  + Python 3.10 (work in progress, does not work yet, as of Feb. 2021)
     - `py310-buster` tag: Debian Buster / Python 3.10:
 ```bash
 $ docker build -t artificialintelligence/python-light:py310-buster docker/python-3.10-buster
+```
+    - `py310-alp313` tag: Alpine 3.13 / Python 3.10:
+```bash
+$ docker build -t artificialintelligence/python-light:py310-alp313 docker/python-3.10-alpine-3.13
 ```
     - `py310-alp312` tag: Alpine 3.12 / Python 3.10:
 ```bash
@@ -144,6 +155,10 @@ $ docker build -t artificialintelligence/python-light:py310-alp312 docker/python
     - `py39-buster` tag: Debian Buster / Python 3.9:
 ```bash
 $ docker build -t artificialintelligence/python-light:py39-buster docker/python-3.9-buster
+```
+    - `py39-alp313` tag: Alpine 3.13 / Python 3.9:
+```bash
+$ docker build -t artificialintelligence/python-light:py39-alp313 docker/python-3.9-alpine-3.13
 ```
     - `py39-alp312` tag: Alpine 3.12 / Python 3.9:
 ```bash
@@ -155,9 +170,17 @@ $ docker build -t artificialintelligence/python-light:py39-alp312 docker/python-
 $ docker build -t artificialintelligence/python-light:py38-buster docker/python-3.8-buster
 $ docker tag artificialintelligence/python-light:py38-buster artificialintelligence/python-light:latest
 ```
+    - `py38-alp313` tag: Alpine 3.13 / Python 3.8:
+```bash
+$ docker build -t artificialintelligence/python-light:py38-alp313 docker/python-3.8-alpine-3.13
+```
     - `py38-alp312` tag: Alpine 3.12 / Python 3.8:
 ```bash
 $ docker build -t artificialintelligence/python-light:py38-alp312 docker/python-3.8-alpine-3.12
+```
+    - `alp313-py387` tag: Alpine 3.13 / Python 3.8.7:
+```bash
+$ docker build -t artificialintelligence/python-light:alp313-py387 docker/alpine-3.13
 ```
     - `alp312-py385` tag: Alpine 3.12 / Python 3.8.5:
 ```bash
@@ -176,11 +199,15 @@ $ docker build -t artificialintelligence/python-light:alp311-py382 docker/alpine
 $ docker login
 $ docker push artificialintelligence/python-light:latest
 $ docker push artificialintelligence/python-light:py310-buster
+$ docker push artificialintelligence/python-light:py310-alp313
 $ docker push artificialintelligence/python-light:py310-alp312
 $ docker push artificialintelligence/python-light:py39-buster
+$ docker push artificialintelligence/python-light:py39-alp313
 $ docker push artificialintelligence/python-light:py39-alp312
 $ docker push artificialintelligence/python-light:py38-buster
+$ docker push artificialintelligence/python-light:py38-alp313
 $ docker push artificialintelligence/python-light:py38-alp312
+$ docker push artificialintelligence/python-light:alp313-py387
 $ docker push artificialintelligence/python-light:alp312-py385
 $ docker push artificialintelligence/python-light:alp311-py382
 ```
@@ -198,6 +225,9 @@ $ docker login quay.io
 $ docker tag artificialintelligence/python-light:py310-buster quay.io/artificialintelligence/python-light:py310-buster
 $ docker push quay.io/artificialintelligence/python-light:py310-buster
 #
+$ docker tag artificialintelligence/python-light:py310-alp313 quay.io/artificialintelligence/python-light:py310-alp313
+$ docker push quay.io/artificialintelligence/python-light:py310-alp313
+#
 $ docker tag artificialintelligence/python-light:py310-alp312 quay.io/artificialintelligence/python-light:py310-alp312
 $ docker push quay.io/artificialintelligence/python-light:py310-alp312
 ```
@@ -205,6 +235,9 @@ $ docker push quay.io/artificialintelligence/python-light:py310-alp312
 ```bash
 $ docker tag artificialintelligence/python-light:py39-buster quay.io/artificialintelligence/python-light:py39-buster
 $ docker push quay.io/artificialintelligence/python-light:py39-buster
+#
+$ docker tag artificialintelligence/python-light:py39-alp313 quay.io/artificialintelligence/python-light:py39-alp313
+$ docker push quay.io/artificialintelligence/python-light:py39-alp313
 #
 $ docker tag artificialintelligence/python-light:py39-alp312 quay.io/artificialintelligence/python-light:py39-alp312
 $ docker push quay.io/artificialintelligence/python-light:py39-alp312
@@ -214,8 +247,14 @@ $ docker push quay.io/artificialintelligence/python-light:py39-alp312
 $ docker tag artificialintelligence/python-light:py38-buster quay.io/artificialintelligence/python-light:py38-buster
 $ docker push quay.io/artificialintelligence/python-light:py38-buster
 #
+$ docker tag artificialintelligence/python-light:py38-alp313 quay.io/artificialintelligence/python-light:py38-alp313
+$ docker push quay.io/artificialintelligence/python-light:py38-alp313
+#
 $ docker tag artificialintelligence/python-light:py38-alp312 quay.io/artificialintelligence/python-light:py38-alp312
 $ docker push quay.io/artificialintelligence/python-light:py38-alp312
+#
+$ docker tag artificialintelligence/python-light:alp313-py387 quay.io/artificialintelligence/python-light:alp313-py387
+$ docker push quay.io/artificialintelligence/python-light:alp313-py387
 #
 $ docker tag artificialintelligence/python-light:alp312-py385 quay.io/artificialintelligence/python-light:alp312-py385
 $ docker push quay.io/artificialintelligence/python-light:alp312-py385
