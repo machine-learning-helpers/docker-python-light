@@ -39,6 +39,7 @@ RUN apk update && \
             libnsl-dev ncurses-dev libressl-dev readline-dev \
             sqlite-dev postgresql-dev libxml2-dev libxslt-dev make jq \
             py-scipy
+
 RUN pip3 install -U pip \
  && pip3 install -U psutil \
  && pip3 install -U dill \
@@ -53,6 +54,5 @@ RUN pip3 install -U scikit-learn
 
 #
 #ENTRYPOINT ["/bin/bash"]
-CMD /bin/bash
-
+CMD ["/bin/bash"]
 
