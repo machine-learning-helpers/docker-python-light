@@ -36,12 +36,17 @@ RUN apk update && \
 	    jpeg-dev openjpeg-dev tiff-dev \
             sqlite-dev postgresql-dev libxml2-dev libxslt-dev make jq \
 	    python3-dev py3-pip py3-setuptools py3-pytest py3-tox \
-	    py3-psutil py3-scipy
+	    py3-psutil py3-scipy \
+            rust cargo
 
-RUN python3 -mpip install -U build wheel
+RUN python3 -mpip install -U pip
+RUN python3 -mpip install -U build --ignore-installed
+RUN python3 -mpip install -U wheel
+RUN python3 -mpip install -U scikit-build
 RUN python3 -mpip install -U dill joblib
 RUN python3 -mpip install -U twine
-RUN python3 -mpip install -U sphinx poetry
+RUN python3 -mpip install -U sphinx
+#RUN python3 -mpip install -U poetry
 RUN python3 -mpip install -U flake8 black mypy
 RUN python3 -mpip install -U simplejson
 RUN python3 -mpip install -U pyjq
