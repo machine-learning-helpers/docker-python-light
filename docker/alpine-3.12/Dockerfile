@@ -1,10 +1,10 @@
 #
 # Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/alpine-3.12/Dockerfile
 # On Docker Hub: https://hub.docker.com/repository/docker/artificialintelligence/python-light/general
-# Usual Docker tag: py38-alp312 (artificialintelligence/python-light:py38-alp312)
+# Usual Docker tag: alp312-py388 (artificialintelligence/python-light:alp312-py388)
 #
 # See also
-# * Alpine 3.12 (featuring Python 3.8.5)
+# * Alpine 3.12 (featuring Python 3.8.8)
 # * Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
 # * Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.12/x86_64/Dockerfile
 #

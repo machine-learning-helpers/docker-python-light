@@ -12,7 +12,6 @@ psycopg2 = "*"
 
 [dev-packages]
 awsume = "*"
-awscli = "*"
 setuptools = "*"
 wheel = "*"
 pytest = "*"

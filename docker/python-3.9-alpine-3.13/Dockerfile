@@ -9,7 +9,7 @@
 #   + Dockerfile: https://github.com/docker-library/python/blob/master/3.9/alpine3.13/Dockerfile
 # * The best Docker base image for your Python application, Apr. 2020:
 #   https://pythonspeed.com/articles/base-image-python-docker-images/
-# * Alpine 3.13 (featuring Python 3.8.7)
+# * Alpine 3.13 (featuring Python 3.8.8)
 #   + Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
 #   + Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.13/x86_64/Dockerfile
 #
