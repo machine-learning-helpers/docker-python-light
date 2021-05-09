@@ -157,13 +157,13 @@ $ docker tag artificialintelligence/python-light:py38-buster artificialintellige
 ```bash
 $ docker build -t artificialintelligence/python-light:py38-alp313 docker/python-3.8-alpine-3.13
 ```
-    - `alp313-py388` tag: Alpine 3.13 / Python 3.8.8:
+    - `alp313-py3810` tag: Alpine 3.13 / Python 3.8.10:
 ```bash
-$ docker build -t artificialintelligence/python-light:alp313-py388 docker/alpine-3.13
+$ docker build -t artificialintelligence/python-light:alp313-py3810 docker/alpine-3.13
 ```
-    - `alp312-py388` tag: Alpine 3.12 / Python 3.8.8:
+    - `alp312-py3810` tag: Alpine 3.12 / Python 3.8.10:
 ```bash
-$ docker build -t artificialintelligence/python-light:alp312-py388 docker/alpine-3.12
+$ docker build -t artificialintelligence/python-light:alp312-py3810 docker/alpine-3.12
 ```
 
 * (Optional) Push the newly built images to Docker Hub.
@@ -179,8 +179,8 @@ $ docker push artificialintelligence/python-light:py39-buster
 $ docker push artificialintelligence/python-light:py39-alp313
 $ docker push artificialintelligence/python-light:py38-buster
 $ docker push artificialintelligence/python-light:py38-alp313
-$ docker push artificialintelligence/python-light:alp313-py388
-$ docker push artificialintelligence/python-light:alp312-py388
+$ docker push artificialintelligence/python-light:alp313-py3810
+$ docker push artificialintelligence/python-light:alp312-py3810
 ```
 
 * (Optional) Push the newly built images to Quay.io.

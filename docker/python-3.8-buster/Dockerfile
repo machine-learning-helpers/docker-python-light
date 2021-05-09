@@ -99,7 +99,7 @@ RUN python3 -mpip install -U pip
 RUN python3 -mpip install -U psutil dill joblib
 RUN python3 -mpip install -U setuptools wheel build scikit-build
 RUN python3 -mpip install -U pytest tox twine
-RUN python3 -mpip install -U pyjq
+RUN python3 -mpip install -U pyjq pyyaml
 RUN python3 -mpip install -U numpy pandas pandas-datareader
 RUN python3 -mpip install -U scikit-learn
 RUN python3 -mpip install -U matplotlib seaborn

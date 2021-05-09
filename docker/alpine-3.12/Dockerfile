@@ -1,10 +1,10 @@
 #
 # Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/alpine-3.12/Dockerfile
 # On Docker Hub: https://hub.docker.com/repository/docker/artificialintelligence/python-light/general
-# Usual Docker tag: alp312-py388 (artificialintelligence/python-light:alp312-py388)
+# Usual Docker tag: alp312-py3810 (artificialintelligence/python-light:alp312-py3810)
 #
 # See also
-# * Alpine 3.12 (featuring Python 3.8.8)
+# * Alpine 3.12 (featuring Python 3.8.10)
 # * Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
 # * Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.12/x86_64/Dockerfile
 #
@@ -50,6 +50,7 @@ RUN python3 -mpip install -U sphinx
 RUN python3 -mpip install -U flake8 black mypy
 RUN python3 -mpip install -U simplejson
 RUN python3 -mpip install -U pyjq
+RUN python3 -mpip install -U pyyaml
 RUN python3 -mpip install -U protobuf
 RUN python3 -mpip install -U numpy
 RUN python3 -mpip install -U pandas
