@@ -1,17 +1,21 @@
 #
-# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/alpine-3.13/Dockerfile
+# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/python-3.8-alpine-3.14/Dockerfile
 # On Docker Hub: https://hub.docker.com/repository/docker/artificialintelligence/python-light/general
-# Usual Docker tag: alp313-py3810 (artificialintelligence/python-light:alp313-py3810)
+# Usual Docker tag: py38-alp314 (infrahelpers/python-light:py38-alp314)
 #
-# See also
-# * Alpine 3.13 (featuring Python 3.8.10)
-# * Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
-# * Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.13/x86_64/Dockerfile
+# See also:
+# * Python 3.8 Alpine 3.14:
+#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/python?tab=tags&page=1&name=3.8-alpine3.14
+#   + Dockerfile: https://github.com/docker-library/python/blob/master/3.8/alpine3.14/Dockerfile
+# * The best Docker base image for your Python application, Apr. 2020:
+#   https://pythonspeed.com/articles/base-image-python-docker-images/
+# * Alpine 3.14 (featuring Python 3.9.5)
+#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
+#   + Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.14/x86_64/Dockerfile
 #
+FROM python:3.8-alpine3.14
 
-FROM alpine:3.13
-
-LABEL maintainer "Denis Arnaud <denis.arnaud_fedora@m4x.org>"
+LABEL authors="Denis Arnaud <denis.arnaud_github at m4x dot org>"
 
 # Tell Docker about the server port
 EXPOSE 5000
@@ -37,16 +41,13 @@ RUN apk update && \
             sqlite-dev postgresql-dev libxml2-dev libxslt-dev make jq \
 	    python3-dev py3-pip py3-setuptools py3-wheel py3-pytest py3-tox \
 	    py3-psutil py3-scipy \
-            rust cargo
+	    rust cargo
 
 RUN python3 -mpip install -U pip
-RUN python3 -mpip install -U build --ignore-installed
-RUN python3 -mpip install -U wheel
-RUN python3 -mpip install -U scikit-build
+RUN python3 -mpip install -U build
 RUN python3 -mpip install -U dill joblib
 RUN python3 -mpip install -U twine
-RUN python3 -mpip install -U sphinx
-#RUN python3 -mpip install -U poetry
+RUN python3 -mpip install -U sphinx poetry
 RUN python3 -mpip install -U flake8 black mypy
 RUN python3 -mpip install -U simplejson
 RUN python3 -mpip install -U pyjq
@@ -58,7 +59,6 @@ RUN python3 -mpip install -U pandas-datareader
 RUN python3 -mpip install -U matplotlib
 RUN python3 -mpip install -U seaborn
 RUN python3 -mpip install -U scikit-learn
-RUN python3 -mpip install -U flask flask_restful connexion requests
 RUN python3 -mpip install -U psycopg2
 RUN python3 -mpip install -U opentraveldata OpenTrepWrapper neobase
 

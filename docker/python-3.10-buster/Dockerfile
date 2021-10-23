@@ -1,23 +1,22 @@
 #
 # Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/python-3.10-buster/Dockerfile
-# On Docker Hub: https://hub.docker.com/repository/docker/artificialintelligence/python-light/general
-# Usual Docker tag: py310-buster (artificialintelligence/python-light:py310-buster)
+# On Docker Hub: https://hub.docker.com/repository/docker/infrahelpers/python-light/general
+# Usual Docker tag: py310-buster (infrahelpers/python-light:py310-buster)
 #
 
 # See also:
 # * Python 3.10 Debian Buster:
-#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/python?tab=tags&page=1&name=3.10-rc-buster
-#   + Dockerfile: https://github.com/docker-library/python/blob/master/3.10-rc/buster/Dockerfile
+#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/python?tab=tags&page=1&name=3.10-buster
+#   + Dockerfile: https://github.com/docker-library/python/blob/master/3.10/buster/Dockerfile
 # * The best Docker base image for your Python application, Apr. 2020:
 #   https://pythonspeed.com/articles/base-image-python-docker-images/
 # * General purpose Debian 10 (Buster) C++/Python development image:
-#   + Docker Hub: https://cloud.docker.com/u/cpppythondevelopment/repository/docker/cpppythondevelopment/base
+#   + Docker Hub: https://cloud.docker.com/u/infrahelpers/repository/docker/infrahelpers/cpppython
 #   + Dockerfile: https://github.com/cpp-projects-showcase/docker-images/tree/master/debian10
 #
+FROM python:3.10-buster
 
-FROM python:3.10-rc-buster
-
-LABEL maintainer "Denis Arnaud <denis.arnaud_fedora@m4x.org>"
+LABEL authors="Denis Arnaud <denis.arnaud_github at m4x dot org>"
 
 # Tell Docker about the server port
 EXPOSE 5000
@@ -29,7 +28,10 @@ ENV LANGUAGE en_US:en
 ENV LANG en_US.UTF-8
 ENV LANG4GEN en_US.utf8
 ENV LC_ALL $LANG
-ENV SOCI_VER 4.0.1-alpha2
+# Check https://github.com/SOCI/soci/tags for the latest releases
+ENV SOCI_VER 4.0.2
+# Check https://github.com/mikefarah/yq/releases/latest for the latest releases
+ENV YQ_VERSION 4.13.5
 
 # Update the system
 #RUN echo "Europe/Paris" > /etc/timezone
@@ -42,7 +44,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends \
 	curl wget netcat net-tools aptitude
 
 # Generate the locales
-RUN locale-gen $LANG && update-locale LANG=$LANG LANGUAGE=$LANGUAGE LC_ALL=$LC_ALL
+RUN locale-gen $LANG && \
+	update-locale LANG=$LANG LANGUAGE=$LANGUAGE LC_ALL=$LC_ALL
 
 # Configure the time-zone
 RUN dpkg-reconfigure -f noninteractive tzdata
@@ -67,13 +70,20 @@ RUN apt-get -y install libmpich-dev libopenmpi-dev \
 	libicu-dev libprotobuf-dev protobuf-compiler \
 	python libpython-dev python3 libpython3-dev \
 	python3-django libapache2-mod-wsgi-py3 \
-	jq libgeos++-dev \
+	libgeos++-dev \
 	doxygen ghostscript texlive-latex-recommended \
 	r-base r-base-dev \
-	rake
+	rake \
+	jq
 
 # Cleaning
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# yq, the YAML CLI utility like jq, but for YAML
+RUN curl -L -s \
+ 	  https://github.com/mikefarah/yq/releases/download/v$YQ_VERSION/yq_linux_amd64 \
+	  -o /usr/local/bin/yq && \
+	chmod 775 /usr/local/bin/yq
 
 # SOCI
 RUN mkdir -p /opt/soci
@@ -104,7 +114,7 @@ RUN python3 -mpip install -U numpy pandas pandas-datareader
 RUN python3 -mpip install -U scikit-learn
 RUN python3 -mpip install -U matplotlib seaborn
 RUN python3 -mpip install -U dash flask flask_restful connexion requests
-RUN python3 -mpip install -U jupyterlab
+RUN python3 -mpip install -U ipython jupyterlab
 RUN python3 -mpip install -U opentraveldata OpenTrepWrapper Neobase
 RUN python3 -mpip install -U elasticsearch kafka-python
 RUN python3 -mpip install -U psycopg2
