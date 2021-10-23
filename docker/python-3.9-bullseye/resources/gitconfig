@@ -11,6 +11,9 @@
 [push]
         default = tracking
 
+[pull]
+        rebase = false
+
 [color]
         ui = auto
 

@@ -88,14 +88,15 @@ RUN curl -L -s \
 # SOCI
 RUN mkdir -p /opt/soci
 ADD resources/soci-debian-cmake.patch /opt/soci/soci-debian-cmake.patch
-RUN wget https://github.com/SOCI/soci/archive/$SOCI_VER.tar.gz \
-	  -O /opt/soci/soci-$SOCI_VER.tar.gz && cd /opt/soci && \
-	tar zxf soci-$SOCI_VER.tar.gz && rm -f soci-$SOCI_VER.tar.gz && \
-	cd soci-$SOCI_VER && patch -p1 < ../soci-debian-cmake.patch && \
-	mkdir -p build && cd build && \
-	cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release \
-	  -DSOCI_CXX11=ON -DSOCI_TESTS=OFF .. && \
-	make install
+RUN curl -L -s \
+         https://github.com/SOCI/soci/archive/refs/tags/v$SOCI_VER.tar.gz \
+         -o /opt/soci/soci-$SOCI_VER.tar.gz && cd /opt/soci && \
+    tar zxf soci-$SOCI_VER.tar.gz && rm -f soci-$SOCI_VER.tar.gz && \
+    cd soci-$SOCI_VER && patch -p1 < ../soci-debian-cmake.patch && \
+    mkdir -p build && cd build && \
+    cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release \
+          -DSOCI_CXX11=ON -DSOCI_TESTS=OFF .. && \
+    make install
 
 # Set up the packaging environment for the `build` user
 ADD resources/bashrc $HOME/.bashrc
