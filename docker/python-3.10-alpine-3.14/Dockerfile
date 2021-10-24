@@ -50,7 +50,7 @@ RUN python3 -mpip install -U twine
 RUN python3 -mpip install -U sphinx poetry
 RUN python3 -mpip install -U flake8 black mypy
 RUN python3 -mpip install -U simplejson
-RUN python3 -mpip install -U pyjq
+#RUN python3 -mpip install -U pyjq
 RUN python3 -mpip install -U pyyaml
 RUN python3 -mpip install -U protobuf
 RUN python3 -mpip install -U numpy
