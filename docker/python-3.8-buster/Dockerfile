@@ -51,7 +51,8 @@ RUN locale-gen $LANG && \
 RUN dpkg-reconfigure -f noninteractive tzdata
 
 # Basic, C++ and Python packages
-RUN apt-get -y install less htop screen \
+RUN apt-get -qq update && \
+    apt-get -y install procps less htop screen \
 	git keychain gawk \
 	bash-completion vim-nox emacs-nox apt-utils keyutils ftp \
 	zlib1g-dev libbz2-dev \
@@ -66,6 +67,7 @@ RUN apt-get -y install less htop screen \
 RUN apt-get -y install libmpich-dev libopenmpi-dev \
 	sqlite3 libsqlite3-dev \
 	mariadb-client libmariadbclient-dev \
+	postgresql-client \
 	libpqxx-dev \
 	libicu-dev libprotobuf-dev protobuf-compiler \
 	python libpython-dev python3 libpython3-dev \
