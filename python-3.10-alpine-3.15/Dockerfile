@@ -1,19 +1,19 @@
 #
-# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/python-3.8-alpine-3.14/Dockerfile
+# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/python-3.10-alpine-3.15/Dockerfile
 # On Docker Hub: https://hub.docker.com/repository/docker/artificialintelligence/python-light/general
-# Usual Docker tag: py38-alp314 (infrahelpers/python-light:py38-alp314)
+# Usual Docker tag: py310-alp315 (infrahelpers/python-light:py310-alp315)
 #
 # See also:
-# * Python 3.8 Alpine 3.14:
-#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/python?tab=tags&page=1&name=3.8-alpine3.14
-#   + Dockerfile: https://github.com/docker-library/python/blob/master/3.8/alpine3.14/Dockerfile
+# * Python 3.10 Alpine 3.15:
+#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/python?tab=tags&page=1&name=3.10-alpine3.15
+#   + Dockerfile: https://github.com/docker-library/python/blob/master/3.10/alpine3.15/Dockerfile
 # * The best Docker base image for your Python application, Apr. 2020:
 #   https://pythonspeed.com/articles/base-image-python-docker-images/
-# * Alpine 3.14 (featuring Python 3.9.5)
+# * Alpine 3.15 (featuring Python 3.9.7)
 #   + Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
-#   + Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.14/x86_64/Dockerfile
+#   + Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.15/x86_64/Dockerfile
 #
-FROM python:3.8-alpine3.14
+FROM python:3.10-alpine3.15
 
 LABEL authors="Denis Arnaud <denis.arnaud_github at m4x dot org>"
 
@@ -41,7 +41,7 @@ RUN apk update && \
             sqlite-dev postgresql-dev libxml2-dev libxslt-dev make jq \
 	    python3-dev py3-pip py3-setuptools py3-wheel py3-pytest py3-tox \
 	    py3-psutil py3-scipy \
-	    rust cargo
+            rust cargo
 
 RUN python3 -mpip install -U pip
 RUN python3 -mpip install -U build
@@ -50,7 +50,7 @@ RUN python3 -mpip install -U twine
 RUN python3 -mpip install -U sphinx poetry
 RUN python3 -mpip install -U flake8 black mypy
 RUN python3 -mpip install -U simplejson
-RUN python3 -mpip install -U pyjq
+#RUN python3 -mpip install -U pyjq
 RUN python3 -mpip install -U pyyaml
 RUN python3 -mpip install -U protobuf
 RUN python3 -mpip install -U numpy
