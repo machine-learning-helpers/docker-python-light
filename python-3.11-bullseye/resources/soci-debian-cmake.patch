@@ -1,0 +1,24 @@
+diff -Naur soci-4.0.2/CMakeLists.txt soci-4.0.2.new/CMakeLists.txt
+--- soci-4.0.2/CMakeLists.txt	2021-04-20 09:43:34.000000000 +0000
++++ soci-4.0.2.new/CMakeLists.txt	2021-07-11 14:17:56.384789763 +0000
+@@ -13,6 +13,8 @@
+ cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+ 
+ project(SOCI)
++include(GNUInstallDirs)
++message (STATUS "CMAKE_INSTALL_LIBDIR ${CMAKE_INSTALL_LIBDIR}")
+ 
+ ###############################################################################
+ # Build features and variants
+@@ -186,7 +188,9 @@
+ # Installation
+ ###############################################################################
+ 
+-include(GNUInstallDirs)
++if(NOT DEFINED SOCI_LIBDIR)
++  set(SOCI_LIBDIR "${CMAKE_INSTALL_LIBDIR}")
++endif()
+ 
+ ###############################################################################
+ # Configuration files
+

@@ -4,7 +4,7 @@
 # Usual Docker tag: alp315-py397 (infrahelpers/python-light:alp315-py397)
 #
 # See also
-# * Alpine 3.15 (featuring Python 3.9.7)
+# * Alpine 3.15 (featuring Python 3.9.16)
 # * Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
 # * Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.15/x86_64/Dockerfile
 #
