@@ -44,18 +44,22 @@ The Docker images of this repository just add some standard ML-related Python
 packages such as NumPy, Pandas and Dash/Plotly, on top of the native images
 maintained by the
 [Docker Python project](https://github.com/docker-library/python):
+* [Python 3.11](https://github.com/docker-library/python/tree/master/3.11/)
+  + [Python 3.11 - Debian Bullseye](https://github.com/docker-library/python/tree/master/3.11/bullseye)
+  + [Python 3.11 - Debian Buster](https://github.com/docker-library/python/tree/master/3.11/buster)
+  + [Python 3.11 - Alpine 3.17](https://github.com/docker-library/python/tree/master/3.11/alpine3.17)
 * [Python 3.10](https://github.com/docker-library/python/tree/master/3.10/)
   + [Python 3.10 - Debian Bullseye](https://github.com/docker-library/python/tree/master/3.10/bullseye)
   + [Python 3.10 - Debian Buster](https://github.com/docker-library/python/tree/master/3.10/buster)
-  + [Python 3.10 - Alpine 3.16](https://github.com/docker-library/python/tree/master/3.10/alpine3.16)
+  + [Python 3.10 - Alpine 3.17](https://github.com/docker-library/python/tree/master/3.10/alpine3.17)
 * [Python 3.9](https://github.com/docker-library/python/tree/master/3.9/)
   + [Python 3.9 - Debian Bullseye](https://github.com/docker-library/python/tree/master/3.9/bullseye)
   + [Python 3.9 - Debian Buster](https://github.com/docker-library/python/tree/master/3.9/buster)
-  + [Python 3.9 - Alpine 3.16](https://github.com/docker-library/python/tree/master/3.9/alpine3.16)
+  + [Python 3.9 - Alpine 3.17](https://github.com/docker-library/python/tree/master/3.9/alpine3.17)
 * [Python 3.8](https://github.com/docker-library/python/tree/master/3.8/)
   + [Python 3.8 - Debian Bullseye](https://github.com/docker-library/python/tree/master/3.8/bullseye)
   + [Python 3.8 - Debian Buster](https://github.com/docker-library/python/tree/master/3.8/buster)
-  + [Python 3.8 - Alpine 3.16](https://github.com/docker-library/python/tree/master/3.8/alpine3.16)
+  + [Python 3.8 - Alpine 3.17](https://github.com/docker-library/python/tree/master/3.8/alpine3.17)
 
 In the OCI image, Python packages are installed by the `pip` utility.
 For testing purposes, outside of the container, Python virtual environments
@@ -90,31 +94,34 @@ of Dash applications.
   https://github.com/machine-learning-helpers/docker-python-light
 
 * [Native Python OCI images](https://github.com/docker-library/python):
+  + [Python 3.11](https://github.com/docker-library/python/tree/master/3.11)
+    - https://github.com/docker-library/python/tree/master/3.11/bullseye
+    - https://github.com/docker-library/python/tree/master/3.11/buster
+    - https://github.com/docker-library/python/tree/master/3.11/alpine3.17
   + [Python 3.10](https://github.com/docker-library/python/tree/master/3.10)
     - https://github.com/docker-library/python/tree/master/3.10/bullseye
     - https://github.com/docker-library/python/tree/master/3.10/buster
-    - https://github.com/docker-library/python/tree/master/3.10/alpine3.16
+    - https://github.com/docker-library/python/tree/master/3.10/alpine3.17
   + [Python 3.9](https://github.com/docker-library/python/tree/master/3.9)
     - https://github.com/docker-library/python/tree/master/3.9/bullseye
     - https://github.com/docker-library/python/tree/master/3.9/buster
-    - https://github.com/docker-library/python/tree/master/3.9/alpine3.16
+    - https://github.com/docker-library/python/tree/master/3.9/alpine3.17
   + [Python 3.8](https://github.com/docker-library/python/tree/master/3.8)
     - https://github.com/docker-library/python/tree/master/3.8/bullseye
     - https://github.com/docker-library/python/tree/master/3.8/buster
-    - https://github.com/docker-library/python/tree/master/3.8/alpine3.16
+    - https://github.com/docker-library/python/tree/master/3.8/alpine3.17
   + [Python 3.7](https://github.com/docker-library/python/tree/master/3.7)
     - https://github.com/docker-library/python/tree/master/3.7/bullseye
     - https://github.com/docker-library/python/tree/master/3.7/buster
-    - https://github.com/docker-library/python/tree/master/3.7/alpine3.16
+    - https://github.com/docker-library/python/tree/master/3.7/alpine3.17
 
 * [Debian releases](https://wiki.debian.org/DebianReleases)
   + [Debian 11 Bullseye](https://wiki.debian.org/DebianBullseye)
   + [Debian 10 Buster](https://wiki.debian.org/DebianBuster)
 
 * [Alpine Linux releases](https://wiki.alpinelinux.org/wiki/Alpine_Linux:Releases)
+  + [Alpine 3.17](https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.17.0)
   + [Alpine 3.16](https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.16.0)
-  + [Alpine 3.15](https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.15.0)
-  + [Alpine 3.14](https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.14.0)
 
 # Simple use
 * Download the Docker image:
@@ -143,18 +150,36 @@ $ cd docker-python-light
 ```
 
 * Build the OCI images (here with Docker, but any other tool may be used):
+  + Python 3.11
+    - `py311-bullseye` tag: Debian Bullseye / Python 3.11:
+```bash
+$ docker build -t infrahelpers/python-light:py311-bullseye python-3.11-bullseye
+```
+    - `py311-buster` tag: Debian Buster / Python 3.11:
+```bash
+$ docker build -t infrahelpers/python-light:py311-buster python-3.11-buster
+```
+    - `py311-alp317` tag: Alpine 3.17 / Python 3.11:
+```bash
+$ docker build -t infrahelpers/python-light:py311-alp317 python-3.11-alpine-3.17
+```
   + Python 3.10
     - `py310-bullseye` tag: Debian Bullseye / Python 3.10:
 ```bash
 $ docker build -t infrahelpers/python-light:py310-bullseye python-3.10-bullseye
+$ docker tag infrahelpers/python-light:py310-bullseye infrahelpers/python-light:latest
 ```
     - `py310-buster` tag: Debian Buster / Python 3.10:
 ```bash
 $ docker build -t infrahelpers/python-light:py310-buster python-3.10-buster
 ```
-    - `py310-alp316` tag: Alpine 3.16 / Python 3.10:
+    - `alp317-py31011` tag: Alpine 3.17 / Python 3.10.11:
 ```bash
-$ docker build -t infrahelpers/python-light:py310-alp315 python-3.10-alpine-3.16
+$ docker build -t infrahelpers/python-light:alp317-py31011 alpine-3.17
+```
+    - `alp316-py31011` tag: Alpine 3.16 / Python 3.10.11:
+```bash
+$ docker build -t infrahelpers/python-light:alp316-py31011 alpine-3.16
 ```
   + Python 3.9
     - `py39-bullseye` tag: Debian Bullseye / Python 3.9:
@@ -165,31 +190,14 @@ $ docker build -t infrahelpers/python-light:py39-bullseye python-3.9-bullseye
 ```bash
 $ docker build -t infrahelpers/python-light:py39-buster python-3.9-buster
 ```
-    - `py39-alp316` tag: Alpine 3.16 / Python 3.9:
-```bash
-$ docker build -t infrahelpers/python-light:py39-alp316 python-3.9-alpine-3.16
-```
-    - `alp316-py3104` tag: Alpine 3.16 / Python 3.9.7:
-```bash
-$ docker build -t infrahelpers/python-light:alp316-py3104 alpine-3.16
-```
-    - `alp316-py397` tag: Alpine 3.15 / Python 3.9.7:
-```bash
-$ docker build -t infrahelpers/python-light:alp315-py397 alpine-3.15
-```
   + Python 3.8
     - `latest`/`py38-bullseye` tags: Debian Bullseye / Python 3.8:
 ```bash
 $ docker build -t infrahelpers/python-light:py38-bullseye python-3.8-bullseye
-$ docker tag infrahelpers/python-light:py38-bullseye infrahelpers/python-light:latest
 ```
     - `py38-buster` tags: Debian Buster / Python 3.8:
 ```bash
 $ docker build -t infrahelpers/python-light:py38-buster python-3.8-buster
-```
-    - `py38-alp316` tag: Alpine 3.16 / Python 3.8:
-```bash
-$ docker build -t infrahelpers/python-light:py38-alp316 python-3.8-alpine-3.16
 ```
 
 * (Optional) Push the newly built images to Docker Hub.
@@ -198,18 +206,18 @@ $ docker build -t infrahelpers/python-light:py38-alp316 python-3.8-alpine-3.16
   [a change on GitHub](https://github.com/machine-learning-helpers/docker-python-light/commits/master))
 ```bash
 $ docker login
+$ docker push infrahelpers/python-light:py311-bullseye
+$ docker push infrahelpers/python-light:py311-buster
+$ docker push infrahelpers/python-light:py311-alp317
 $ docker push infrahelpers/python-light:py310-bullseye
+$ docker push infrahelpers/python-light:latest
 $ docker push infrahelpers/python-light:py310-buster
-$ docker push infrahelpers/python-light:py310-alp316
 $ docker push infrahelpers/python-light:py39-bullseye
 $ docker push infrahelpers/python-light:py39-buster
-$ docker push infrahelpers/python-light:py39-alp316
 $ docker push infrahelpers/python-light:py38-bullseye
-$ docker push infrahelpers/python-light:latest
 $ docker push infrahelpers/python-light:py38-buster
-$ docker push infrahelpers/python-light:py38-alp316
-$ docker push infrahelpers/python-light:alp316-py3104
-$ docker push infrahelpers/python-light:alp315-py397
+$ docker push infrahelpers/python-light:alp317-py31011
+$ docker push infrahelpers/python-light:alp316-py31011
 ```
 
 * (Optional) Push the newly built images to Quay.io.
@@ -220,6 +228,17 @@ $ docker push infrahelpers/python-light:alp315-py397
 ```bash
 $ docker login quay.io
 ```
+	+ Python 3.11:
+```bash
+$ docker tag infrahelpers/python-light:py311-bullseye quay.io/artificialintelligence/python-light:py311-bullseye
+$ docker push quay.io/artificialintelligence/python-light:py311-bullseye
+#
+$ docker tag infrahelpers/python-light:py311-buster quay.io/artificialintelligence/python-light:py311-buster
+$ docker push quay.io/artificialintelligence/python-light:py311-buster
+#
+$ docker tag infrahelpers/python-light:py311-alp317 quay.io/artificialintelligence/python-light:py311-alp317
+$ docker push quay.io/artificialintelligence/python-light:py311-alp317
+```
 	+ Python 3.10:
 ```bash
 $ docker tag infrahelpers/python-light:py310-bullseye quay.io/artificialintelligence/python-light:py310-bullseye
@@ -228,8 +247,8 @@ $ docker push quay.io/artificialintelligence/python-light:py310-bullseye
 $ docker tag infrahelpers/python-light:py310-buster quay.io/artificialintelligence/python-light:py310-buster
 $ docker push quay.io/artificialintelligence/python-light:py310-buster
 #
-$ docker tag infrahelpers/python-light:py310-alp316 quay.io/artificialintelligence/python-light:py310-alp316
-$ docker push quay.io/artificialintelligence/python-light:py310-alp316
+$ docker tag infrahelpers/python-light:py310-alp317 quay.io/artificialintelligence/python-light:py310-alp317
+$ docker push quay.io/artificialintelligence/python-light:py310-alp317
 ```
 	+ Python 3.9:
 ```bash
@@ -239,11 +258,11 @@ $ docker push quay.io/artificialintelligence/python-light:py39-bullseye
 $ docker tag infrahelpers/python-light:py39-buster quay.io/artificialintelligence/python-light:py39-buster
 $ docker push quay.io/artificialintelligence/python-light:py39-buster
 #
-$ docker tag infrahelpers/python-light:py39-alp316 quay.io/artificialintelligence/python-light:py39-alp316
-$ docker push quay.io/artificialintelligence/python-light:py39-alp316
+$ docker tag infrahelpers/python-light:py39-alp317 quay.io/artificialintelligence/python-light:py39-alp317
+$ docker push quay.io/artificialintelligence/python-light:py39-alp317
 #
-$ docker tag infrahelpers/python-light:alp316-py3104 quay.io/artificialintelligence/python-light:alp316-py3104
-$ docker push quay.io/artificialintelligence/python-light:alp316-py3104
+$ docker tag infrahelpers/python-light:alp317-py3104 quay.io/artificialintelligence/python-light:alp317-py3104
+$ docker push quay.io/artificialintelligence/python-light:alp317-py3104
 #
 $ docker tag infrahelpers/python-light:alp315-py397 quay.io/artificialintelligence/python-light:alp315-py397
 $ docker push quay.io/artificialintelligence/python-light:alp315-py397
@@ -256,8 +275,8 @@ $ docker push quay.io/artificialintelligence/python-light:py38-bullseye
 $ docker tag infrahelpers/python-light:py38-buster quay.io/artificialintelligence/python-light:py38-buster
 $ docker push quay.io/artificialintelligence/python-light:py38-buster
 #
-$ docker tag infrahelpers/python-light:py38-alp316 quay.io/artificialintelligence/python-light:py38-alp316
-$ docker push quay.io/artificialintelligence/python-light:py38-alp316
+$ docker tag infrahelpers/python-light:py38-alp317 quay.io/artificialintelligence/python-light:py38-alp317
+$ docker push quay.io/artificialintelligence/python-light:py38-alp317
 ```
 
 * Shutdown the Docker image
