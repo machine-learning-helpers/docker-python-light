@@ -14,10 +14,10 @@ Data Science. These images are based on the
 [latest Python-ready Linux distributions](https://hub.docker.com/_/python).
 
 As well explained in
-[a PythonSpeed article from April 2020](https://pythonspeed.com/articles/base-image-python-docker-images/),
+[a PythonSpeed article from June 2023](https://pythonspeed.com/articles/base-image-python-docker-images/),
 the best light images for Python production operations are based on Debian
-(the latest stable release being, as of end 2020,
-[Debian 10, also known as Buster](https://www.debian.org/releases/buster/)).
+(the latest stable release being, as of end 2023,
+[Debian 12, also known as Bookworm](https://www.debian.org/releases/bookworm/)).
 For historical reasons (and for the challenge!), Alpine-based distributions
 are still maintained too.
 
@@ -44,22 +44,26 @@ The Docker images of this repository just add some standard ML-related Python
 packages such as NumPy, Pandas and Dash/Plotly, on top of the native images
 maintained by the
 [Docker Python project](https://github.com/docker-library/python):
+* [Python 3.12-rc](https://github.com/docker-library/python/tree/master/3.12-rc/)
+  + [Python 3.12-rc - Debian Bookworm](https://github.com/docker-library/python/tree/master/3.12-rc/bookworm)
+  + [Python 3.12-rc - Debian Bullseye](https://github.com/docker-library/python/tree/master/3.12-rc/bullseye)
+  + [Python 3.12-rc - Alpine 3.18](https://github.com/docker-library/python/tree/master/3.12-rc/alpine3.18)
 * [Python 3.11](https://github.com/docker-library/python/tree/master/3.11/)
+  + [Python 3.11 - Debian Bookworm](https://github.com/docker-library/python/tree/master/3.11/bookworm)
   + [Python 3.11 - Debian Bullseye](https://github.com/docker-library/python/tree/master/3.11/bullseye)
-  + [Python 3.11 - Debian Buster](https://github.com/docker-library/python/tree/master/3.11/buster)
-  + [Python 3.11 - Alpine 3.17](https://github.com/docker-library/python/tree/master/3.11/alpine3.17)
+  + [Python 3.11 - Alpine 3.18](https://github.com/docker-library/python/tree/master/3.11/alpine3.18)
 * [Python 3.10](https://github.com/docker-library/python/tree/master/3.10/)
+  + [Python 3.10 - Debian Bookworm](https://github.com/docker-library/python/tree/master/3.10/bookworm)
   + [Python 3.10 - Debian Bullseye](https://github.com/docker-library/python/tree/master/3.10/bullseye)
-  + [Python 3.10 - Debian Buster](https://github.com/docker-library/python/tree/master/3.10/buster)
-  + [Python 3.10 - Alpine 3.17](https://github.com/docker-library/python/tree/master/3.10/alpine3.17)
+  + [Python 3.10 - Alpine 3.18](https://github.com/docker-library/python/tree/master/3.10/alpine3.18)
 * [Python 3.9](https://github.com/docker-library/python/tree/master/3.9/)
+  + [Python 3.9 - Debian Bookworm](https://github.com/docker-library/python/tree/master/3.9/bookworm)
   + [Python 3.9 - Debian Bullseye](https://github.com/docker-library/python/tree/master/3.9/bullseye)
-  + [Python 3.9 - Debian Buster](https://github.com/docker-library/python/tree/master/3.9/buster)
-  + [Python 3.9 - Alpine 3.17](https://github.com/docker-library/python/tree/master/3.9/alpine3.17)
+  + [Python 3.9 - Alpine 3.18](https://github.com/docker-library/python/tree/master/3.9/alpine3.18)
 * [Python 3.8](https://github.com/docker-library/python/tree/master/3.8/)
+  + [Python 3.8 - Debian Bookworm](https://github.com/docker-library/python/tree/master/3.8/bookworm)
   + [Python 3.8 - Debian Bullseye](https://github.com/docker-library/python/tree/master/3.8/bullseye)
-  + [Python 3.8 - Debian Buster](https://github.com/docker-library/python/tree/master/3.8/buster)
-  + [Python 3.8 - Alpine 3.17](https://github.com/docker-library/python/tree/master/3.8/alpine3.17)
+  + [Python 3.8 - Alpine 3.18](https://github.com/docker-library/python/tree/master/3.8/alpine3.18)
 
 In the OCI image, Python packages are installed by the `pip` utility.
 For testing purposes, outside of the container, Python virtual environments
@@ -94,34 +98,38 @@ of Dash applications.
   https://github.com/machine-learning-helpers/docker-python-light
 
 * [Native Python OCI images](https://github.com/docker-library/python):
+  + [Python 3.12-rc](https://github.com/docker-library/python/tree/master/3.12-rc)
+    - https://github.com/docker-library/python/tree/master/3.12-rc/bookworm
+    - https://github.com/docker-library/python/tree/master/3.12-rc/bullseye
+    - https://github.com/docker-library/python/tree/master/3.12-rc/alpine3.18
   + [Python 3.11](https://github.com/docker-library/python/tree/master/3.11)
+    - https://github.com/docker-library/python/tree/master/3.11/bookworm
     - https://github.com/docker-library/python/tree/master/3.11/bullseye
-    - https://github.com/docker-library/python/tree/master/3.11/buster
-    - https://github.com/docker-library/python/tree/master/3.11/alpine3.17
+    - https://github.com/docker-library/python/tree/master/3.11/alpine3.18
   + [Python 3.10](https://github.com/docker-library/python/tree/master/3.10)
+    - https://github.com/docker-library/python/tree/master/3.10/bookworm
     - https://github.com/docker-library/python/tree/master/3.10/bullseye
-    - https://github.com/docker-library/python/tree/master/3.10/buster
-    - https://github.com/docker-library/python/tree/master/3.10/alpine3.17
+    - https://github.com/docker-library/python/tree/master/3.10/alpine3.18
   + [Python 3.9](https://github.com/docker-library/python/tree/master/3.9)
+    - https://github.com/docker-library/python/tree/master/3.9/bookworm
     - https://github.com/docker-library/python/tree/master/3.9/bullseye
-    - https://github.com/docker-library/python/tree/master/3.9/buster
-    - https://github.com/docker-library/python/tree/master/3.9/alpine3.17
+    - https://github.com/docker-library/python/tree/master/3.9/alpine3.18
   + [Python 3.8](https://github.com/docker-library/python/tree/master/3.8)
+    - https://github.com/docker-library/python/tree/master/3.8/bookworm
     - https://github.com/docker-library/python/tree/master/3.8/bullseye
-    - https://github.com/docker-library/python/tree/master/3.8/buster
-    - https://github.com/docker-library/python/tree/master/3.8/alpine3.17
+    - https://github.com/docker-library/python/tree/master/3.8/alpine3.18
   + [Python 3.7](https://github.com/docker-library/python/tree/master/3.7)
+    - https://github.com/docker-library/python/tree/master/3.7/bookworm
     - https://github.com/docker-library/python/tree/master/3.7/bullseye
-    - https://github.com/docker-library/python/tree/master/3.7/buster
-    - https://github.com/docker-library/python/tree/master/3.7/alpine3.17
+    - https://github.com/docker-library/python/tree/master/3.7/alpine3.18
 
 * [Debian releases](https://wiki.debian.org/DebianReleases)
+  + [Debian 12 Bookworm](https://wiki.debian.org/DebianBookworm)
   + [Debian 11 Bullseye](https://wiki.debian.org/DebianBullseye)
-  + [Debian 10 Buster](https://wiki.debian.org/DebianBuster)
 
 * [Alpine Linux releases](https://wiki.alpinelinux.org/wiki/Alpine_Linux:Releases)
+  + [Alpine 3.18](https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.18.0)
   + [Alpine 3.17](https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.17.0)
-  + [Alpine 3.16](https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.16.0)
 
 # Simple use
 * Download the Docker image:
@@ -151,13 +159,13 @@ $ cd docker-python-light
 
 * Build the OCI images (here with Docker, but any other tool may be used):
   + Python 3.11
+    - `py311-bookworm` tag: Debian Bookworm / Python 3.11:
+```bash
+$ docker build -t infrahelpers/python-light:py311-bookworm python-3.11-bookworm
+```
     - `py311-bullseye` tag: Debian Bullseye / Python 3.11:
 ```bash
 $ docker build -t infrahelpers/python-light:py311-bullseye python-3.11-bullseye
-```
-    - `py311-buster` tag: Debian Buster / Python 3.11:
-```bash
-$ docker build -t infrahelpers/python-light:py311-buster python-3.11-buster
 ```
     - `py311-alp317` tag: Alpine 3.17 / Python 3.11:
 ```bash

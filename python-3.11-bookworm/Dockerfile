@@ -1,20 +1,20 @@
 #
-# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/python-3.9-buster/Dockerfile
+# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/docker/python-3.11-bookworm/Dockerfile
 # On Docker Hub: https://hub.docker.com/repository/docker/infrahelpers/python-light/general
-# Usual Docker tag: py39-buster (infrahelpers/python-light:py39-buster)
+# Usual Docker tag: py311-bookworm (infrahelpers/python-light:py311-bookworm)
 #
 
 # See also:
-# * Python 3.9 Debian Buster:
-#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/python?tab=tags&page=1&name=3.9-buster
-#   + Dockerfile: https://github.com/docker-library/python/blob/master/3.9/buster/Dockerfile
+# * Python 3.11 Debian Bookworm:
+#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/python?tab=tags&page=1&name=3.11-bookworm
+#   + Dockerfile: https://github.com/docker-library/python/blob/master/3.11/bookworm/Dockerfile
 # * The best Docker base image for your Python application, Apr. 2020:
 #   https://pythonspeed.com/articles/base-image-python-docker-images/
-# * General purpose Debian 10 (Buster) C++/Python development image:
+# * General purpose Debian 12 (Bookworm) C++/Python development image:
 #   + Docker Hub: https://cloud.docker.com/u/infrahelpers/repository/docker/infrahelpers/cpppython
-#   + Dockerfile: https://github.com/cpp-projects-showcase/docker-images/tree/master/debian10
+#   + Dockerfile: https://github.com/cpp-projects-showcase/docker-images/tree/master/debian12
 #
-FROM python:3.9-buster
+FROM python:3.11-bookworm
 
 LABEL authors="Denis Arnaud <denis.arnaud_github at m4x dot org>"
 
@@ -62,11 +62,11 @@ RUN apt-get -qq update && \
 	swig graphviz libopenblas-dev
 RUN apt-get -y install libmpich-dev libopenmpi-dev \
 	sqlite3 libsqlite3-dev \
-	mariadb-client libmariadbclient-dev \
+	mariadb-client default-libmysqlclient-dev \
 	postgresql-client \
 	libpqxx-dev \
 	libicu-dev libprotobuf-dev protobuf-compiler \
-	python libpython-dev python3 libpython3-dev \
+	python3 libpython3-dev \
 	python3-django libapache2-mod-wsgi-py3 \
 	libgeos++-dev \
 	doxygen ghostscript texlive-latex-recommended \
@@ -110,7 +110,7 @@ RUN python3 -mpip install -U pip
 RUN python3 -mpip install -U psutil dill joblib
 RUN python3 -mpip install -U setuptools wheel build scikit-build
 RUN python3 -mpip install -U pytest tox twine
-RUN python3 -mpip install -U pyjq pyyaml
+#RUN python3 -mpip install -U pyjq pyyaml
 RUN python3 -mpip install -U numpy pandas pandas-datareader
 RUN python3 -mpip install -U scikit-learn
 RUN python3 -mpip install -U matplotlib seaborn

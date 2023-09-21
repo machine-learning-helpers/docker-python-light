@@ -1,14 +1,14 @@
 #
-# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/alpine-3.16/Dockerfile
+# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/alpine-3.18/Dockerfile
 # On Docker Hub: https://hub.docker.com/repository/docker/infrahelpers/python-light/general
-# Usual Docker tag: alp316-py310 (infrahelpers/python-light:alp316-py310)
+# Usual Docker tag: alp318-py311 (infrahelpers/python-light:alp318-py311)
 #
 # See also
-# * Alpine 3.16 (featuring Python 3.10.11)
+# * Alpine 3.18 (featuring Python 3.11.5)
 # * Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
-# * Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.16/x86_64/Dockerfile
+# * Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.18/x86_64/Dockerfile
 #
-FROM alpine:3.16
+FROM alpine:3.18
 
 LABEL authors="Denis Arnaud <denis.arnaud_github at m4x dot org>"
 
