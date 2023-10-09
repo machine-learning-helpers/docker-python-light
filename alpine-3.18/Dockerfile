@@ -57,7 +57,8 @@ RUN python3 -mpip install -U pandas-datareader
 RUN python3 -mpip install -U matplotlib
 RUN python3 -mpip install -U seaborn
 RUN python3 -mpip install -U scikit-learn
-RUN python3 -mpip install -U flask flask_restful connexion requests
+RUN python3 -mpip install -U connexion requests
+#RUN python3 -mpip install -U flask flask_restful
 RUN python3 -mpip install -U psycopg2
 RUN python3 -mpip install -U opentraveldata OpenTrepWrapper neobase
 
