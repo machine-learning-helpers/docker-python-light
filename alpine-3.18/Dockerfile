@@ -28,9 +28,9 @@ RUN apk update && \
 	    autoconf automake libtool \
 	    man-pages bash bash-doc bash-completion git vim \
         musl linux-headers build-base ca-certificates \
-        gcc libgcc g++ gfortran cython file libffi-dev libressl-dev \
+        gcc libgcc g++ gfortran cython file libffi-dev \
         musl-dev lapack-dev openblas-dev freetype-dev \
-	    openssl-dev libnsl-dev libressl-dev \
+	    openssl-dev libnsl-dev \
         ncurses-dev readline-dev tk-dev tcl-dev lcms2-dev \
 	    jpeg-dev openjpeg-dev tiff-dev \
         sqlite-dev postgresql-dev libxml2-dev libxslt-dev make jq \
