@@ -37,7 +37,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends \
 	apt-utils apt-transport-https \
 	ca-certificates locales locales-all tzdata sudo \
 	zip unzip gzip bzip2 xz-utils tar p7zip-full \
-	curl wget netcat net-tools aptitude
+	curl wget netcat-traditional net-tools aptitude
 
 # Generate the locales
 RUN locale-gen $LANG && \
