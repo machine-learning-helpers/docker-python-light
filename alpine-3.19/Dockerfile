@@ -1,10 +1,10 @@
 #
 # Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/alpine-3.19/Dockerfile
 # On Docker Hub: https://hub.docker.com/repository/docker/infrahelpers/python-light/general
-# Usual Docker tag: alp319-py312 (infrahelpers/python-light:alp319-py312)
+# Usual Docker tag: alp319-py311 (infrahelpers/python-light:alp319-py311)
 #
 # See also
-# * Alpine 3.19 (featuring Python 3.12.2)
+# * Alpine 3.19 (featuring Python 3.11.6)
 # * Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
 # * Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.19/x86_64/Dockerfile
 #
@@ -38,29 +38,30 @@ RUN apk update && \
 	    py3-psutil py3-scipy \
         rust cargo
 
-RUN python3 -mpip install -U pip
-RUN python3 -mpip install -U build --ignore-installed
-RUN python3 -mpip install -U wheel
-RUN python3 -mpip install -U scikit-build
-RUN python3 -mpip install -U dill joblib
-RUN python3 -mpip install -U twine
-RUN python3 -mpip install -U sphinx
-#RUN python3 -mpip install -U poetry
-RUN python3 -mpip install -U flake8 black mypy
-RUN python3 -mpip install -U simplejson
-#RUN python3 -mpip install -U pyjq
-RUN python3 -mpip install -U pyyaml
-RUN python3 -mpip install -U protobuf
-RUN python3 -mpip install -U numpy
-RUN python3 -mpip install -U pandas
-RUN python3 -mpip install -U pandas-datareader
-RUN python3 -mpip install -U matplotlib
-RUN python3 -mpip install -U seaborn
-RUN python3 -mpip install -U scikit-learn
-RUN python3 -mpip install -U connexion requests
-#RUN python3 -mpip install -U flask flask_restful
-RUN python3 -mpip install -U psycopg2
-RUN python3 -mpip install -U opentraveldata OpenTrepWrapper neobase
+RUN python3 -mvenv $HOME/.venv
+RUN . $HOME/.venv/bin/activate && python -mpip install -U pip
+RUN . $HOME/.venv/bin/activate && python -mpip install -U build
+RUN . $HOME/.venv/bin/activate && python -mpip install -U wheel
+RUN . $HOME/.venv/bin/activate && python -mpip install -U scikit-build
+RUN . $HOME/.venv/bin/activate && python -mpip install -U dill joblib
+RUN . $HOME/.venv/bin/activate && python -mpip install -U twine
+RUN . $HOME/.venv/bin/activate && python -mpip install -U sphinx
+#RUN . $HOME/.venv/bin/activate && python -mpip install -U poetry
+RUN . $HOME/.venv/bin/activate && python -mpip install -U flake8 black mypy
+RUN . $HOME/.venv/bin/activate && python -mpip install -U simplejson
+#RUN . $HOME/.venv/bin/activate && python -mpip install -U pyjq
+RUN . $HOME/.venv/bin/activate && python -mpip install -U pyyaml
+RUN . $HOME/.venv/bin/activate && python -mpip install -U protobuf
+RUN . $HOME/.venv/bin/activate && python -mpip install -U numpy
+RUN . $HOME/.venv/bin/activate && python -mpip install -U pandas
+RUN . $HOME/.venv/bin/activate && python -mpip install -U pandas-datareader
+RUN . $HOME/.venv/bin/activate && python -mpip install -U matplotlib
+RUN . $HOME/.venv/bin/activate && python -mpip install -U seaborn
+RUN . $HOME/.venv/bin/activate && python -mpip install -U scikit-learn
+RUN . $HOME/.venv/bin/activate && python -mpip install -U connexion requests
+#RUN . $HOME/.venv/bin/activate && python -mpip install -U flask flask_restful
+RUN . $HOME/.venv/bin/activate && python -mpip install -U psycopg2
+RUN . $HOME/.venv/bin/activate && python -mpip install -U opentraveldata OpenTrepWrapper neobase
 
 RUN rm -rf /var/cache/apk/*
 #RUN apk del .build-deps
