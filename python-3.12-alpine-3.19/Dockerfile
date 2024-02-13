@@ -1,19 +1,19 @@
 #
-# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/python-3.11-alpine-3.18/Dockerfile
+# Source: https://github.com/machine-learning-helpers/docker-python-light/tree/master/python-3.12-alpine-3.19/Dockerfile
 # On Docker Hub: https://hub.docker.com/repository/docker/artificialintelligence/python-light/general
-# Usual Docker tag: py311-alp318 (infrahelpers/python-light:py311-alp318)
+# Usual Docker tag: py312-alp319 (infrahelpers/python-light:py312-alp319)
 #
 # See also:
-# * Python 3.11 Alpine 3.18:
-#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/python?tab=tags&page=1&name=3.11-alpine3.18
-#   + Dockerfile: https://github.com/docker-library/python/blob/master/3.11/alpine3.18/Dockerfile
+# * Python 3.12 Alpine 3.19:
+#   + Image on Docker Hub/Cloud: https://hub.docker.com/_/python?tab=tags&page=1&name=3.12-alpine3.19
+#   + Dockerfile: https://github.com/docker-library/python/blob/master/3.12/alpine3.19/Dockerfile
 # * The best Docker base image for your Python application, Jun. 2023:
 #   https://pythonspeed.com/articles/base-image-python-docker-images/
-# * Alpine 3.18 (featuring Python 3.11.5)
+# * Alpine 3.19 (featuring Python 3.12.2)
 #   + Image on Docker Hub/Cloud: https://hub.docker.com/_/alpine
-#   + Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.18/x86_64/Dockerfile
+#   + Dockerfile: https://github.com/alpinelinux/docker-alpine/blob/v3.19/x86_64/Dockerfile
 #
-FROM python:3.11-alpine3.18
+FROM python:3.12-alpine3.19
 
 LABEL authors="Denis Arnaud <denis.arnaud_github at m4x dot org>"
 
